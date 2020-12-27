@@ -1,0 +1,9 @@
+bin
+obj
+reactivities-notes.txt
+cs-notes.txt
+.vscode
+appsettings.json
+*.db
+**/API/debug.log*
+wwwroot
