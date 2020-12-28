@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using static Application.Weather.WeatherResponse;
+using static Application.Weather.WeatherModel;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherController : ControllerBase
+    [AllowAnonymous]
+    public class WeatherController : BaseController
   {
-        [AllowAnonymous]
+        
         [HttpGet]
         public async Task<IActionResult> City(string city)
         {
