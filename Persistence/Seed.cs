@@ -291,7 +291,14 @@ namespace Persistence
             Latitude = -22.97,
             Longitude = -43.18,
             Name = "Copacabana"
+          },
+          new Spot
+          {
+            Latitude = 54.36,
+            Longitude = 18.48,
+            Name = "Hel"
           }
+
         };
         await context.Spots.AddRangeAsync(spots);
         await context.SaveChangesAsync();

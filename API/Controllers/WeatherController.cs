@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -23,10 +24,16 @@ namespace API.Controllers
       return await Mediator.Send( new GetOneFromOWA.Query { Id = Id });
     }
     
-    [HttpGet]
+    [HttpGet("/one/{id}")]
     public async Task<ActionResult<Spot>> GetOne(Guid Id)
     {
       return await Mediator.Send(new GetOne.Query { Id = Id });
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<List<Spot>>> GetAll()
+    {
+      return await Mediator.Send(new GetAll.Query());
     }
   }
 }
