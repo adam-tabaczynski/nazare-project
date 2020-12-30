@@ -4,6 +4,7 @@ import { history } from "../..";
 import { IActivitiesEnvelope, IActivity } from "../models/activity";
 import { IPhoto, IProfile } from "../models/profile";
 import { IUser, IUserFormValues } from "../models/user";
+import { ISpot } from "../models/weather";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
@@ -60,10 +61,8 @@ const responseBody = (response: AxiosResponse) => response.data;
 // Requests types.
 const requests = {
   get: (url: string) => axios.get(url).then(responseBody),
-  post: (url: string, body: {}) =>
-    axios.post(url, body).then(responseBody),
-  put: (url: string, body: {}) =>
-    axios.put(url, body).then(responseBody),
+  post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
+  put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
   del: (url: string) => axios.delete(url).then(responseBody),
   postForm: (url: string, file: Blob) => {
     let formData = new FormData();
@@ -83,7 +82,7 @@ const Activities = {
   list: (params: URLSearchParams): Promise<IActivitiesEnvelope> =>
     axios
       .get("/activities", { params: params })
-      
+
       .then(responseBody),
   details: (id: string) => requests.get(`/activities/${id}`),
   create: (activity: IActivity) => requests.post("/activities/", activity),
@@ -122,12 +121,12 @@ const Profiles = {
 
 const SpotWeatherRequests = {
   getWeather: (id: string) => requests.get(`/weather/${id}`),
-  getSpotsList: () =>  requests.get(`/weather`)
-}
+  getSpotsList: (): Promise<ISpot[]> => requests.get("/weather"),
+};
 
 export default {
   Activities,
   User,
   Profiles,
-  SpotWeatherRequests
+  SpotWeatherRequests,
 };

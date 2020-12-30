@@ -13,18 +13,18 @@ using static Application.Weather.WeatherModel;
 namespace API.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route("api/[controller]")]
   [AllowAnonymous]
   public class WeatherController : BaseController
   {
      
-    [HttpGet("{id}")]
+    [HttpGet("/one/{id}")]
     public async Task<ActionResult<WeatherDto>> GetOneFromOWA(Guid Id)
     {
       return await Mediator.Send( new GetOneFromOWA.Query { Id = Id });
     }
     
-    [HttpGet("/one/{id}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult<Spot>> GetOne(Guid Id)
     {
       return await Mediator.Send(new GetOne.Query { Id = Id });

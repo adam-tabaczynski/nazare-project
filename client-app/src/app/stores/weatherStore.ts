@@ -11,10 +11,14 @@ export default class WeatherStore {
   }
 
   @observable spotsList: ISpot[] = [];
+  @observable weather: ISpot | null = null;
 
   @action getWeather = async (id: string) => {
     try {
       const weather = await agent.SpotWeatherRequests.getWeather(id);
+      runInAction(() => {
+        this.weather = weather;
+      })
     } catch (error) {
       console.log(error);
     }
@@ -24,6 +28,7 @@ export default class WeatherStore {
     try {
       const spotsList = await agent.SpotWeatherRequests.getSpotsList();
       runInAction(() => {
+        
         this.spotsList = spotsList;
       })
     } catch (error) {
