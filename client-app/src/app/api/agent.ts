@@ -120,8 +120,14 @@ const Profiles = {
     requests.get(`/profiles/${username}/activities?predicate=${predicate}`),
 };
 
+const SpotWeatherRequests = {
+  getWeather: (id: string) => requests.get(`/weather/${id}`),
+  getSpotsList: () =>  requests.get(`/weather`)
+}
+
 export default {
   Activities,
   User,
   Profiles,
+  SpotWeatherRequests
 };

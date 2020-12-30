@@ -20,6 +20,7 @@ const NavBar: React.FC = () => {
             />
             Reactivities
           </Menu.Item>
+          <Menu.Item name="Pogoda" as={NavLink} to="/weather"/>
           <Menu.Item name="Wydarzenia" as={NavLink} to="/activities" />
           <Menu.Item>
             <Button

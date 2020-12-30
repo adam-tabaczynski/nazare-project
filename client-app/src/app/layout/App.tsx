@@ -20,6 +20,7 @@ import { LoadingComponent } from "./LoadingComponent";
 import ModalContainer from "../common/modals/ModalContainer";
 import ProfilePage from "../../features/profiles/ProfilePage";
 import PrivateRoute from "./PrivateRoute";
+import Weather from "../../features/weather/Weather";
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
   const rootStore = useContext(RootStoreContext);
@@ -52,6 +53,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
               {/* Switch assures that only one of these routes will be on at the same time */}
               <Switch>
                 <PrivateRoute exact path="/" component={homepage} />
+                <PrivateRoute exact path="/weather" component={Weather} />
                 <PrivateRoute exact path="/activities" component={ActivityDashboard} />
                 <PrivateRoute path="/activities/:id" component={ActivityDetails} />
                 {/* That is a array of routes - if two or more links goes to the same component. */}

@@ -5,6 +5,7 @@ import CommonStore from "./commonStore";
 import ModalStore from "./modalStore";
 import ProfileStore from "./profileStore";
 import UserStore from "./userStore";
+import WeatherStore from "./weatherStore";
 
 // This will create errors when any function mutate state w/o
 // @action tag.
@@ -16,6 +17,7 @@ export class RootStore {
   commonStore: CommonStore;
   modalStore: ModalStore;
   profileStore: ProfileStore;
+  weatherStore: WeatherStore;
 
   constructor() {
     this.activityStore = new ActivityStore(this);
@@ -23,6 +25,7 @@ export class RootStore {
     this.commonStore = new CommonStore(this);
     this.modalStore = new ModalStore(this);
     this.profileStore = new ProfileStore(this);
+    this.weatherStore = new WeatherStore(this);
     //makeObservable(this);
   }
 }
