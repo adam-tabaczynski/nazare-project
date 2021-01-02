@@ -3,8 +3,13 @@ import { Menu, Header } from "semantic-ui-react";
 import { Calendar } from "react-widgets";
 import { RootStoreContext } from "../../../app/stores/rootStore";
 import { observer } from "mobx-react-lite";
+import dateFnsLocalizer, { defaultFormats } from "react-widgets-date-fns";
+import pl from "date-fns/locale/pl";
 
 const ActivityFilters = () => {
+  const formats = Object.assign(defaultFormats, { default: "mmm YY" });
+  dateFnsLocalizer({ formats, locales: { 'pl': pl } });
+  
   const rootStore = useContext(RootStoreContext);
   const { predicate, setPredicate } = rootStore.activityStore;
   return (
@@ -41,11 +46,12 @@ const ActivityFilters = () => {
         content={"Select Date"}
       />
       <Calendar
+        culture={"pl"}
         // so if user clicks a date it will be saved to predicate map of key-value pairs.
-        onChange={(date) => setPredicate('startDate', date!)}
+        onChange={(date) => setPredicate("startDate", date!)}
         // then the value of this will be the value of pair with key 'startDate',
         // or set it to today's date.
-        value={predicate.get('startDate') || new Date()}
+        value={predicate.get("startDate") || new Date()}
       />
     </Fragment>
   );
