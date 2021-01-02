@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { IUserActivity } from "../../app/models/profile";
 import { format } from "date-fns";
 import { RootStoreContext } from "../../app/stores/rootStore";
+import { pl } from "date-fns/locale";
 
 const panes = [
   { menuItem: "Future Events", pane: { key: "futureEvents" } },
@@ -71,8 +72,8 @@ const ProfileEvents = () => {
                 <Card.Content>
                   <Card.Header textAlign="center">{activity.title}</Card.Header>
                   <Card.Meta textAlign="center">
-                    <div>{format(new Date(activity.date), "do LLL")}</div>
-                    <div>{format(new Date(activity.date), "h:mm a")}</div>
+                    <div>{format(new Date(activity.date), "do LLLL", { locale: pl })}</div>
+                    <div>{format(new Date(activity.date), "H:mm", { locale: pl })}</div>
                   </Card.Meta>
                 </Card.Content>
               </Card>

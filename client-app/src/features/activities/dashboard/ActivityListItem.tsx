@@ -4,6 +4,7 @@ import { Button, Icon, Item, Label, Segment } from "semantic-ui-react";
 import { IActivity } from "../../../app/models/activity";
 import { format } from "date-fns";
 import ActivityListItemAttendees from "./ActivityListItemAttendees";
+import { pl } from "date-fns/locale";
 
 const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
   const host = activity.attendees.filter((x) => x.isHost)[0];
@@ -49,7 +50,7 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
         </Item.Group>
       </Segment>
       <Segment>
-        <Icon name="clock" /> {format(activity.date, "h:mm a")}
+        <Icon name="clock" /> {format(activity.date, "H:mm", { locale: pl })}
         <Icon name="marker" /> {activity.venue}, {activity.city}
       </Segment>
       <Segment secondary>

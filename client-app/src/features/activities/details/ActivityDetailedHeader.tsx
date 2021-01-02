@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { pl } from "date-fns/locale";
 import { observer } from "mobx-react-lite";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
@@ -43,7 +44,7 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
                   content={activity.title}
                   style={{ color: "white" }}
                 />
-                <p>{format(activity.date, "eeee do MMMM")}</p>
+                <p>{format(activity.date, "eeee do MMMM", { locale: pl })}</p>
                 <p>
                   Hosted by{" "}
                   <Link to={`/profile/${host.username}`}>

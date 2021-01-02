@@ -3,7 +3,8 @@ import React, { Fragment, useContext } from "react";
 import { Item, Label } from "semantic-ui-react";
 import { RootStoreContext } from "../../../app/stores/rootStore";
 import ActivityListItem from "./ActivityListItem";
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
+import {pl} from 'date-fns/locale';
 
 // Very similiar stuff to ActivityDashboard - key has been added to Item,
 // because each iteration of .map on activities will generate new Item.
@@ -13,13 +14,14 @@ import { format } from 'date-fns';
 const ActivityList: React.FC = () => {
   const rootStore = useContext(RootStoreContext);
   const { activitiesByDate } = rootStore.activityStore;
+  
 
   return (
     <Fragment>
       {activitiesByDate.map(([group, activities]) => (
         <Fragment key={group}>
           <Label size="large" color="blue">
-            {format(group, 'eeee do MMMM')}
+            {format(parseISO(group), 'EEEE do MMMM yyyy', { locale: pl })}
           </Label>
             <Item.Group divided>
               {activities.map((activity) => (
