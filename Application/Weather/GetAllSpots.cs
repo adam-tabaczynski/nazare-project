@@ -8,7 +8,7 @@ using Persistence;
 
 namespace Application.Weather
 {
-  public class GetAll
+  public class GetAllSpots
   {
     public class Query : IRequest<List<Spot>> { }
 

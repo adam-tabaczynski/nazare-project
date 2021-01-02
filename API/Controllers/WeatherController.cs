@@ -18,22 +18,22 @@ namespace API.Controllers
   public class WeatherController : BaseController
   {
      
-    [HttpGet("/one/{id}")]
-    public async Task<ActionResult<WeatherDto>> GetOneFromOWA(Guid Id)
+    [HttpGet("{id}")]
+    public async Task<ActionResult<WeatherDto>> GetWeather(Guid Id)
     {
-      return await Mediator.Send( new GetOneFromOWA.Query { Id = Id });
+      return await Mediator.Send( new GetWeather.Query { Id = Id });
     }
     
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Spot>> GetOne(Guid Id)
+    [HttpGet("spot/{id}")]
+    public async Task<ActionResult<Spot>> GetSpot(Guid Id)
     {
-      return await Mediator.Send(new GetOne.Query { Id = Id });
+      return await Mediator.Send(new GetSpot.Query { Id = Id });
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Spot>>> GetAll()
+    public async Task<ActionResult<List<Spot>>> GetAllSpots()
     {
-      return await Mediator.Send(new GetAll.Query());
+      return await Mediator.Send(new GetAllSpots.Query());
     }
   }
 }

@@ -11,7 +11,7 @@ using static Application.Weather.WeatherModel;
 
 namespace Application.Weather
 {
-  public class GetOneFromOWA
+  public class GetWeather
   {
     public class Query : IRequest<WeatherDto> { public Guid Id { get; set; }}
 

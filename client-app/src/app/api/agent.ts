@@ -122,6 +122,7 @@ const Profiles = {
 const SpotWeatherRequests = {
   getWeather: (id: string) => requests.get(`/weather/${id}`),
   getSpotsList: (): Promise<ISpot[]> => requests.get("/weather"),
+  getSpot: (id: string) => requests.get(`/weather/spot/${id}`),
 };
 
 export default {

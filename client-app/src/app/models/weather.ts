@@ -4,3 +4,10 @@ export interface ISpot {
   longitude: string,
   name: string,
 }
+
+export interface IWeather {
+  airTemperature: string,
+  windSpeed: string,
+  windAngle: string,
+  cloudiness: string,
+}

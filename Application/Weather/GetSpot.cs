@@ -14,7 +14,7 @@ using static Application.Weather.WeatherModel;
 
 namespace Application.Weather
 {
-  public class GetOne
+  public class GetSpot
   {
     public class Query : IRequest<Spot>
     {
