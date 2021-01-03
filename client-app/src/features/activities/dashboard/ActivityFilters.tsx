@@ -15,35 +15,35 @@ const ActivityFilters = () => {
   return (
     <Fragment>
       <Menu vertical size={"large"} style={{ width: "100%", marginTop: 51 }}>
-        <Header icon={"filter"} attached color={"teal"} content={"Filters"} />
+        <Header icon={"filter"} attached color={"teal"} content={"Filtry"} />
         <Menu.Item
           // no predicates set, default value, All activites are shown.
           active={predicate.size === 0}
           onClick={() => setPredicate("all", "true")}
           color={"blue"}
           name={"all"}
-          content={"All Activities"}
+          content={"Wszystkie wydarzenia"}
         />
         <Menu.Item
           active={predicate.has("isGoing")}
           onClick={() => setPredicate("isGoing", "true")}
           color={"blue"}
           name={"username"}
-          content={"I'm Going"}
+          content={"Uczestniczę"}
         />
         <Menu.Item
           active={predicate.has("isHost")}
           onClick={() => setPredicate("isHost", "true")}
           color={"blue"}
           name={"host"}
-          content={"I'm hosting"}
+          content={"Organizuje"}
         />
       </Menu>
       <Header
         icon={"calendar"}
         attached
         color={"teal"}
-        content={"Select Date"}
+        content={"Wybierz datę"}
       />
       <Calendar
         culture={"pl"}

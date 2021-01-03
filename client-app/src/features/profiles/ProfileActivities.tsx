@@ -8,9 +8,9 @@ import { RootStoreContext } from "../../app/stores/rootStore";
 import { pl } from "date-fns/locale";
 
 const panes = [
-  { menuItem: "Future Events", pane: { key: "futureEvents" } },
-  { menuItem: "Past Events", pane: { key: "pastEvents" } },
-  { menuItem: "Hosting", pane: { key: "hosted" } },
+  { menuItem: "Przyszłe wydarzenia", pane: { key: "futureEvents" } },
+  { menuItem: "Przeszłe wydarzenia", pane: { key: "pastEvents" } },
+  { menuItem: "Organizowane", pane: { key: "hosted" } },
 ];
 
 const ProfileEvents = () => {
@@ -49,7 +49,7 @@ const ProfileEvents = () => {
     <Tab.Pane loading={loadingActivities}>
       <Grid>
         <Grid.Column width={16}>
-          <Header floated="left" icon="calendar" content={"Activities"} />
+          <Header floated="left" icon="calendar" content={"Wydarzenia"} />
         </Grid.Column>
         <Grid.Column width={16}>
           <Tab

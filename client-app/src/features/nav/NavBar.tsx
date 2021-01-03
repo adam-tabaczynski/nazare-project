@@ -14,11 +14,11 @@ const NavBar: React.FC = () => {
           <Menu.Item header as={NavLink} exact to="/">
             {/* inline styling need to be in an object */}
             <img
-              src="/assets/logo.png"
+              src="/assets/wave.png"
               alt="logo"
               style={{ marginRight: 10 }}
             />
-            Reactivities
+            Nazare
           </Menu.Item>
           <Menu.Item name="Pogoda" as={NavLink} to="/weather"/>
           <Menu.Item name="Wydarzenia" as={NavLink} to="/activities" />
@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
               as={NavLink}
               to={"/createActivity"}
               positive
-              content="Create Activity"
+              content="Stwórz wydarzenie"
             />
           </Menu.Item>
           {user && (
@@ -38,10 +38,10 @@ const NavBar: React.FC = () => {
                   <Dropdown.Item
                     as={Link}
                     to={`/profile/${user.username}`}
-                    text="My profile"
+                    text="Mój profil"
                     icon="user"
                   />
-                  <Dropdown.Item onClick={logout} text="Logout" icon="power" />
+                  <Dropdown.Item onClick={logout} text="Wyloguj" icon="power" />
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>

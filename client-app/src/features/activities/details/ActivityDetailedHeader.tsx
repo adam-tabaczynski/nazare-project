@@ -44,10 +44,10 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
                   content={activity.title}
                   style={{ color: "white" }}
                 />
-                <p>{format(activity.date, "eeee do MMMM", { locale: pl })}</p>
+                <p style={{marginTop: 6}}>{format(activity.date, "eeee do MMMM", { locale: pl })}</p>
                 <p>
-                  Hosted by{" "}
-                  <Link to={`/profile/${host.username}`}>
+                  Organizowane przez{" "}
+                  <Link style={{paddingLeft: 2}}to={`/profile/${host.username}`}>
                     <strong>{host.displayName}</strong>
                   </Link>
                 </p>
@@ -64,15 +64,15 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
             color="orange"
             floated="right"
           >
-            Manage Event
+            Zarządzaj wydarzeniem
           </Button>
         ) : activity.isGoing ? (
           <Button loading={loading} onClick={cancelAttendance}>
-            Cancel attendance
+            Zrezygnuj
           </Button>
         ) : (
           <Button loading={loading} onClick={attendActivity} color="teal">
-            Join Activity
+            Dołącz
           </Button>
         )}
       </Segment>

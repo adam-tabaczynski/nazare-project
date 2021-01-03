@@ -16,21 +16,21 @@ const HomePage = () => {
         <Header as="h1" inverted>
           <Image
             size="massive"
-            src="/assets/logo.png"
+            src="/assets/wave.png"
             alt="logo"
             style={{ marginBottom: 12 }}
           />
-          Reactivities
+          Nazare
         </Header>
         {isLoggedIn && user && token ? (
           <Fragment>
             <Header
               as="h2"
               inverted
-              content={`Welcome back ${user.displayName}`}
-            />
-            <Button as={Link} to="/activities" size="huge" inverted>
-              Idź do aktywności
+              content={`Niech wiatr będzie z Tobą ${user.displayName}!`}
+            />          
+            <Button as={Link} to="/activities" size="huge" inverted style={{marginTop: 10}}>
+              Sprawdź co słychać
             </Button>
           </Fragment>
         ) : (
@@ -41,14 +41,14 @@ const HomePage = () => {
               size="huge"
               inverted
             >
-              Login
+              Logowanie
             </Button>
             <Button
               onClick={() => openModal(<RegisterForm />)}
               size="huge"
               inverted
             >
-              Register
+              Rejestracja
             </Button>
           </Fragment>
         )}

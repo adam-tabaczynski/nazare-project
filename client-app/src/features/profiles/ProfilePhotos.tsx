@@ -30,12 +30,12 @@ const ProfilePhotos = () => {
     <Tab.Pane>
       <Grid>
         <Grid.Column width={16} style={{ paddingBottom: 0 }}>
-          <Header floated="left" icon="image" content="Photos" />
+          <Header floated="left" icon="image" content="Zdjęcia" />
           {isCurrentUser && (
             <Button
               floated="right"
               basic
-              content={addPhotoMode ? "Cancel" : "Add Photo"}
+              content={addPhotoMode ? "Anuluj" : "Dodaj zdjęcie"}
               onClick={() => setAddPhotoMode(!addPhotoMode)}
             />
           )}
@@ -64,7 +64,7 @@ const ProfilePhotos = () => {
                           loading={loading && target === photo.id}
                           basic
                           positive
-                          content="Main"
+                          content="Główne"
                         />
                         <Button
                           name={photo.id}

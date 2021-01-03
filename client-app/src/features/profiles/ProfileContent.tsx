@@ -5,18 +5,18 @@ import ProfileFollowings from "./ProfileFollowings";
 import ProfilePhotos from "./ProfilePhotos";
 
 const panes = [
-  { menuItem: "About", render: () => <Tab.Pane>About content</Tab.Pane> },
-  { menuItem: "Photos", render: () => <ProfilePhotos /> },
+  { menuItem: "Bio", render: () => <Tab.Pane>About content</Tab.Pane> },
+  { menuItem: "Zdjęcia", render: () => <ProfilePhotos /> },
   {
-    menuItem: "Activities",
+    menuItem: "Aktywności",
     render: () => <ProfileActivities />,
   },
   {
-    menuItem: "Followers",
+    menuItem: "Obserwujący",
     render: () => <ProfileFollowings />,
   },
   {
-    menuItem: "Following",
+    menuItem: "Obserwujesz",
     render: () => <ProfileFollowings />,
   },
 ];

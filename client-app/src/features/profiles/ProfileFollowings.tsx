@@ -21,8 +21,8 @@ const ProfileFollowings = () => {
             icon="user"
             content={
               activeTab === 3
-                ? `People following ${profile!.displayName}`
-                : `People ${profile!.displayName} is following`
+                ? `Osoby, które obserwują ${profile!.displayName}`
+                : `Osoby, które ${profile!.displayName} obserwuje`
             }
           />
         </Grid.Column>

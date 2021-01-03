@@ -46,8 +46,8 @@ const ProfileHeader: React.FC<IProps> = ({
         </Grid.Column>
         <Grid.Column width={4}>
           <Statistic.Group widths={2}>
-            <Statistic label="Followers" value={profile.followersCount} />
-            <Statistic label="Following" value={profile.followingCount} />
+            <Statistic label="Obserwujący" value={profile.followersCount} />
+            <Statistic label="Obserwuje" value={profile.followingCount} />
           </Statistic.Group>
           <Divider />
           {!isCurrentUser && (
@@ -56,7 +56,7 @@ const ProfileHeader: React.FC<IProps> = ({
                 <Button
                   fluid
                   color="teal"
-                  content={profile.following ? "Following" : "Not following"}
+                  content={profile.following ? "Obserwujesz" : "Nie obserwujesz"}
                 />
               </Reveal.Content>
               <Reveal.Content hidden>
@@ -65,7 +65,7 @@ const ProfileHeader: React.FC<IProps> = ({
                   fluid
                   basic
                   color={profile.following ? "red" : "green"}
-                  content={profile.following ? "Unfollow" : "Follow"}
+                  content={profile.following ? "Nie obserwuj" : "Obserwuj"}
                   onClick={
                     profile.following
                       ? () => unfollow(profile.username)

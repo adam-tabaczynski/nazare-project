@@ -19,7 +19,8 @@ const ActivityDetailedSidebar: React.FC<IProps> = ({ attendees }) => {
         inverted
         color="teal"
       >
-        {attendees.length} {attendees.length === 1 ? "Person" : "People"} going
+        {(attendees.length === 1 ? "Uczestniczy " : "Uczestniczą ") || (attendees.length === 10 ? "Uczestniczy " : "Uczestniczy ")} 
+        {attendees.length} {(attendees.length === 1 ? "osoba" : "osoby") || (attendees.length === 10 ? "osób" : "osób")} 
       </Segment>
       <Segment attached>
         <List relaxed divided>
@@ -31,7 +32,7 @@ const ActivityDetailedSidebar: React.FC<IProps> = ({ attendees }) => {
                   color="orange"
                   ribbon="right"
                 >
-                  Host
+                  Organizator
                 </Label>
               )}
               <Image size="tiny" src={attendee.image || "/assets/user.png"} />

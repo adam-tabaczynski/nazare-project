@@ -24,7 +24,7 @@ const ActivityListItemPlaceholder = () => {
           </Segment>
           <Segment secondary style={{ minHeight: 70 }} />
           <Segment clearing>
-            <Button disabled color="blue" floated="right" content="View" />
+            <Button disabled color="blue" floated="right" content="Zobacz" />
           </Segment>
         </Segment.Group>
       </Placeholder>

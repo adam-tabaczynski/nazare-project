@@ -32,7 +32,7 @@ export const ActivityDetailedChat = () => {
         color="teal"
         style={{ border: "none" }}
       >
-        <Header>Chat about this event</Header>
+        <Header>Porozmawiaj o tym wydarzeniu</Header>
       </Segment>
       <Segment attached>
         <Comment.Group>
@@ -60,10 +60,10 @@ export const ActivityDetailedChat = () => {
                   name='body'
                   component={TextAreaInput}
                   rows={2}
-                  placeholder='Add your comment'
+                  placeholder='Dodaj swój komentarz'
                 />
                 <Button
-                  content="Add Reply"
+                  content="Dodaj odpowiedź"
                   labelPosition="left"
                   icon="edit"
                   primary

@@ -24,7 +24,7 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
                 {activity.title}
               </Item.Header>
               <Item.Description>
-                Hosted by
+                Organizowane przez
                 <Link to={`/profile/${host.username}`}> {host.displayName}</Link>{" "}
               </Item.Description>
               {activity.isHost && (
@@ -32,7 +32,7 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
                   <Label
                     basic
                     color="orange"
-                    content="You are hosting this activity"
+                    content="Organizujesz"
                   />
                 </Item.Description>
               )}
@@ -41,7 +41,7 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
                   <Label
                     basic
                     color="green"
-                    content="You are going to this activity"
+                    content="Uczestniczysz"
                   />
                 </Item.Description>
               )}
@@ -57,12 +57,12 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
         <ActivityListItemAttendees attendees={activity.attendees} />
       </Segment>
       <Segment clearing>
-        <span>{activity.description}</span>
+      <span>{activity.description}</span>
         <Button
           as={Link}
           to={`/activities/${activity.id}`}
           floated="right"
-          content="View"
+          content="Zobacz"
           color="blue"
         />
       </Segment>
