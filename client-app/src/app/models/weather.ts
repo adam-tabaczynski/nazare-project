@@ -7,7 +7,9 @@ export interface ISpot {
 
 export interface IWeather {
   airTemperature: string,
+  waterTemperature: string,
   windSpeed: string,
   windAngle: string,
   cloudiness: string,
+  tideHeight: string,
 }

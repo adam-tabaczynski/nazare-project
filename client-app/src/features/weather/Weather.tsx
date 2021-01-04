@@ -46,24 +46,32 @@ const Weather = () => {
         </Table.Header>
 
         <Table.Body>
+        <Table.Row>
+            <Table.Cell>Temperatura powietrza</Table.Cell>
+            <Table.Cell>{weather?.airTemperature} {weather?.airTemperature && "°C"}</Table.Cell>
+          </Table.Row>
           <Table.Row>
-            <Table.Cell>Wind Speed</Table.Cell>
-            <Table.Cell>{weather?.windSpeed}</Table.Cell>
+            <Table.Cell>Temperatura wody</Table.Cell>
+            <Table.Cell>{weather?.waterTemperature} {weather?.waterTemperature && "°C"}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Prędkość wiatru</Table.Cell>
+            <Table.Cell>{weather?.windSpeed} {weather?.windSpeed && "m/s"}</Table.Cell>
           </Table.Row>
 
           <Table.Row>
-            <Table.Cell>Wind angle</Table.Cell>
+            <Table.Cell>Kierunek wiatru</Table.Cell>
             <Table.Cell>{weather?.windAngle}</Table.Cell>
           </Table.Row>
 
           <Table.Row>
-            <Table.Cell>Air temperature</Table.Cell>
-            <Table.Cell>{weather?.airTemperature}</Table.Cell>
+            <Table.Cell>Zachmurzenie</Table.Cell>
+            <Table.Cell>{weather?.cloudiness}{weather?.cloudiness && "%"}</Table.Cell>
           </Table.Row>
 
           <Table.Row>
-            <Table.Cell>Cloudiness</Table.Cell>
-            <Table.Cell>{weather?.cloudiness}</Table.Cell>
+            <Table.Cell>Wysokośc fali</Table.Cell>
+            <Table.Cell>{weather?.tideHeight}{weather?.tideHeight && "m"}</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
