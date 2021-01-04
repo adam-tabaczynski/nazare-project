@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Application.Weather
 {
-    public class WeatherModel
+    public class WeatherModelOWA
     {
       // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
       public class Coord
@@ -51,7 +51,7 @@ namespace Application.Weather
           public int sunset { get; set; } 
       }
 
-      public class Root
+      public class RootOWA
       {
           public Coord coord { get; set; } 
           public List<Weather> weather { get; set; } 

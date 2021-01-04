@@ -10,7 +10,7 @@ using Domain;
 using MediatR;
 using Newtonsoft.Json;
 using Persistence;
-using static Application.Weather.WeatherModel;
+using static Application.Weather.WeatherModelOWA;
 
 namespace Application.Weather
 {

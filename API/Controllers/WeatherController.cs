@@ -8,7 +8,7 @@ using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using static Application.Weather.WeatherModel;
+using static Application.Weather.WeatherModelOWA;
 
 namespace API.Controllers
 {

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 using MediatR;
 using Newtonsoft.Json;
 using Persistence;
-using static Application.Weather.WeatherModel;
+using static Application.Weather.WeatherModelOWA;
+using static Application.Weather.WeatherModelWWO;
 
 namespace Application.Weather
 {
@@ -29,6 +30,8 @@ namespace Application.Weather
         var latitude = spot.Latitude;
         var longitude = spot.Longitude;
 
+        WeatherDto weatherResponse = new WeatherDto();
+
         using (var client = new HttpClient())
         {
 
@@ -37,18 +40,29 @@ namespace Application.Weather
           response.EnsureSuccessStatusCode();
 
           var stringResult = await response.Content.ReadAsStringAsync();
-          Root rawWeather = JsonConvert.DeserializeObject<Root>(stringResult);
-          var weatherResponse = new WeatherDto
-          {
-            AirTemperature = rawWeather.main.temp,
-            WindSpeed = rawWeather.wind.speed,
-            WindAngle = rawWeather.wind.deg,
-            Cloudiness = rawWeather.clouds.all
-          };
+          RootOWA rawWeather = JsonConvert.DeserializeObject<RootOWA>(stringResult);
 
-          return weatherResponse;
+          weatherResponse.AirTemperature = rawWeather.main.temp;
+          weatherResponse.WindSpeed = rawWeather.wind.speed;
+          weatherResponse.Cloudiness = rawWeather.clouds.all;
         }
-        
+        using (var client = new HttpClient())
+        {
+
+          client.BaseAddress = new Uri("http://api.worldweatheronline.com/premium/v1/marine.ashx");
+          var response = await client.GetAsync($"?key=78b44e53d6a24d13ba895644210401&format=json&q={latitude},{longitude}&tide=yes");
+          response.EnsureSuccessStatusCode();
+
+          var stringResult = await response.Content.ReadAsStringAsync();
+          RootWWO rawWeather = JsonConvert.DeserializeObject<RootWWO>(stringResult);
+
+          weatherResponse.WaterTemperature = rawWeather.data.weather[0].hourly[5].waterTemp_C;
+          weatherResponse.TideHeight = rawWeather.data.weather[0].tides[0].tide_data[2].tideHeight_mt;
+          weatherResponse.WindAngle = rawWeather.data.weather[0].hourly[5].winddir16Point;
+        }
+
+
+        return weatherResponse;
       }
     }
   }
