@@ -37,21 +37,21 @@ const LoginForm = () => {
         <Form onSubmit={handleSubmit} error>
           <Header
             as="h2"
-            content="Login to Reactivities"
+            content="Zaloguj się"
             color="teal"
             textAlign="center"
           />
-          <Field name="email" component={TextInput} placeholder="Email" />
+          <Field name="email" component={TextInput} placeholder="Adres e-mail" />
           <Field
             name="password"
             component={TextInput}
-            placeholder="Password"
+            placeholder="Hasło"
             type="password"
           />
           {submitError && !dirtySinceLastSubmit && (
             <ErrorMessage
               error={submitError}
-              text="Invalid username or password"
+              text="Niepoprawny e-mail lub hasło"
             />
           )}
           <br />
@@ -59,7 +59,7 @@ const LoginForm = () => {
             disabled={(invalid && !dirtySinceLastSubmit) || pristine}
             loading={submitting}
             color="teal"
-            content="Login"
+            content="Zaloguj się"
             fluid
           />
         </Form>

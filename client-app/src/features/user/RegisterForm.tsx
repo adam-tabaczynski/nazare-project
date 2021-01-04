@@ -30,8 +30,7 @@ const RegisterForm = () => {
       render={({
         handleSubmit,
         submitting,
-        form,
-      submitError,
+        submitError,
         invalid,
         pristine,
         dirtySinceLastSubmit,
@@ -39,30 +38,40 @@ const RegisterForm = () => {
         <Form onSubmit={handleSubmit} error>
           <Header
             as="h2"
-            content="Sign up to Reactivities"
+            content="Zarejestruj się do Nazare"
             color="teal"
             textAlign="center"
           />
-          <Field name="username" component={TextInput} placeholder="Username" />
-          <Field name="displayName" component={TextInput} placeholder="Display Name" />
-          <Field name="email" component={TextInput} placeholder="Email" />
+          <Field
+            name="username"
+            component={TextInput}
+            placeholder="Nazwa użytkownika"
+          />
+          <Field
+            name="displayName"
+            component={TextInput}
+            placeholder="Nazwa profilu"
+          />
+          <Field
+            name="email"
+            component={TextInput}
+            placeholder="Adres e-mail"
+          />
           <Field
             name="password"
             component={TextInput}
-            placeholder="Password"
+            placeholder="Hasło"
             type="password"
           />
           {submitError && !dirtySinceLastSubmit && (
-            <ErrorMessage
-              error={submitError}
-            />
+            <ErrorMessage error={submitError} />
           )}
           <br />
           <Button
             disabled={(invalid && !dirtySinceLastSubmit) || pristine}
             loading={submitting}
             color="teal"
-            content="Register"
+            content="Zarejestruj się"
             fluid
           />
         </Form>

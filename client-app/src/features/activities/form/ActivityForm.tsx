@@ -20,18 +20,18 @@ import { v4 as uuid } from "uuid";
 import { RootStoreContext } from "../../../app/stores/rootStore";
 
 const validate = combineValidators({
-  title: isRequired({ message: "event title is required" }),
-  category: isRequired("Category"),
+  title: isRequired({ message: "Podanie tytułu wydarzenia jest obowiązkowe" }),
+  category: isRequired({ message: "Podanie kategorii wydarzenia jest obowiązkowe" }),
   description: composeValidators(
     isRequired("Description"),
     hasLengthGreaterThan(4)({
-      message: "Description needs to be atleast 5 characters",
+      message: "Opis musi mieć conajmniej 5 znaków",
     })
   )(),
-  city: isRequired("City"),
-  venue: isRequired("Venue"),
-  date: isRequired("Date"),
-  time: isRequired("Time"),
+  city: isRequired({ message: "Podanie nazwy spotu jest obowiązkowe" }),
+  venue: isRequired({ message: "Podanie nazwy kraju jest obowiązkowe" }),
+  date: isRequired({ message: "Podanie dnia wydarzenia jest obowiązkowe" }),
+  time: isRequired({ message: "Podanie godziny wydarzenia jest obowiązkowe" }),
 });
 
 interface DetailParams {
@@ -102,20 +102,20 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
               <Form onSubmit={handleSubmit} loading={loading}>
                 <Field
                   name="title"
-                  placeholder="Title"
+                  placeholder="Tytuł"
                   value={activity.title}
                   component={TextInput}
                 />
                 <Field
                   name="description"
-                  placeholder="Description"
+                  placeholder="Opis"
                   rows={3}
                   value={activity.description}
                   component={TextAreaInput}
                 />
                 <Field
                   name="category"
-                  placeholder="Category"
+                  placeholder="Kategoria"
                   options={category}
                   value={activity.category}
                   component={SelectInput}
@@ -138,13 +138,13 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
                 </Form.Group>
                 <Field
                   name="city"
-                  placeholder="City"
+                  placeholder="Spot"
                   value={activity.city}
                   component={TextInput}
                 />
                 <Field
                   name="venue"
-                  placeholder="Venue"
+                  placeholder="Kraj"
                   value={activity.venue}
                   component={TextInput}
                 />
@@ -154,7 +154,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
                   floated="right"
                   positive
                   type="submit"
-                  content="Submit"
+                  content="Dodaj"
                 />
                 <Button
                   onClick={
@@ -165,7 +165,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
                   disabled={loading}
                   floated="right"
                   type="submit"
-                  content="Cancel"
+                  content="Anuluj"
                 />
               </Form>
             )}
