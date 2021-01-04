@@ -19,8 +19,16 @@ const ActivityDetailedSidebar: React.FC<IProps> = ({ attendees }) => {
         inverted
         color="teal"
       >
-        {(attendees.length === 1 ? "Uczestniczy " : "Uczestniczą ") || (attendees.length === 10 ? "Uczestniczy " : "Uczestniczy ")} 
-        {attendees.length} {(attendees.length === 1 ? "osoba" : "osoby") || (attendees.length === 10 ? "osób" : "osób")} 
+        {attendees.length === 2 ||
+        attendees.length === 3 ||
+        attendees.length === 4
+          ? "Uczestniczą "
+          : "Uczestniczy "}
+        {attendees.length}{" "}
+        {(attendees.length === 1 && "osoba") ||
+         (attendees.length === 2 ||
+          attendees.length === 3 ||
+          attendees.length === 4 ? "osoby" : "osób")}
       </Segment>
       <Segment attached>
         <List relaxed divided>
@@ -42,8 +50,9 @@ const ActivityDetailedSidebar: React.FC<IProps> = ({ attendees }) => {
                     {attendee.displayName}
                   </Link>
                 </Item.Header>
-                {attendee.following &&
-                  <Item.Extra style={{ color: "orange" }}>Following</Item.Extra>}
+                {attendee.following && (
+                  <Item.Extra style={{ color: "orange" }}>Following</Item.Extra>
+                )}
               </Item.Content>
             </Item>
           ))}
