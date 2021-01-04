@@ -1,11 +1,12 @@
 import React from "react";
 import { Tab } from "semantic-ui-react";
 import ProfileActivities from "./ProfileActivities";
+import ProfileDescription from "./ProfileDescription";
 import ProfileFollowings from "./ProfileFollowings";
 import ProfilePhotos from "./ProfilePhotos";
 
 const panes = [
-  { menuItem: "Bio", render: () => <Tab.Pane>About content</Tab.Pane> },
+  { menuItem: "Bio", render: () => <ProfileDescription /> },
   { menuItem: "Zdjęcia", render: () => <ProfilePhotos /> },
   {
     menuItem: "Aktywności",

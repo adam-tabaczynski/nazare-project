@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import React, { Fragment, useContext, useEffect } from "react";
-import { Card, Image, Table } from "semantic-ui-react";
+import { Card, GridColumn, Image, Table } from "semantic-ui-react";
 import { ISpot } from "../../app/models/weather";
 import { RootStoreContext } from "../../app/stores/rootStore";
 
@@ -23,7 +23,7 @@ const Weather = () => {
         {spotsList.map((spot: ISpot) => (
           <Card key={spot.id} onClick={() => getWeatherAndSpot(spot.id)}>
             <Image src={spot.imageUrl} />
-            <Card.Content>
+            <Card.Content> 
               <Card.Header textAlign="center">
                 <div>{spot.name}, {spot.country}</div>
               </Card.Header>

@@ -50,19 +50,21 @@ export default class ProfileStore {
   @action loadUserActivities = async (username: string, predicate?: string) => {
     this.loadingActivities = true;
     try {
-      const activities = await agent.Profiles.listActivities(username, predicate!);
+      const activities = await agent.Profiles.listActivities(
+        username,
+        predicate!
+      );
       runInAction(() => {
         this.userActivities = activities;
         this.loadingActivities = false;
-      })
-      
+      });
     } catch (error) {
-      toast.error('Problem loading activities');
+      toast.error("Problem loading activities");
       runInAction(() => {
         this.loadingActivities = false;
-      })
+      });
     }
-  }
+  };
 
   @action setActiveTab = (activeIndex: number) => {
     this.activeTab = activeIndex;
@@ -81,6 +83,22 @@ export default class ProfileStore {
         this.loadingProfile = false;
       });
       console.log(error);
+    }
+  };
+
+  @action updateProfile = async (profile: Partial<IProfile>) => {
+    try {
+      await agent.Profiles.updateProfile(profile);
+      runInAction(() => {
+        if (
+          profile.displayName !== this.rootStore.userStore.user!.displayName
+        ) {
+          this.rootStore.userStore.user!.displayName = profile.displayName!;
+        }
+        this.profile = { ...this.profile!, ...profile };
+      });
+    } catch (error) {
+      toast.error("Problem updating profile");
     }
   };
 
