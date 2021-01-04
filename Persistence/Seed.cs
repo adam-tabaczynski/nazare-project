@@ -290,13 +290,19 @@ namespace Persistence
           {
             Latitude = -22.97,
             Longitude = -43.18,
-            Name = "Copacabana"
+            Name = "Copacabana",
+            Country = "Brazylia",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1609760892/Copacabana_emz5bs.jpg"
           },
           new Spot
           {
             Latitude = 54.36,
             Longitude = 18.48,
-            Name = "Hel"
+            Name = "Hel",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1609760892/hel_jyavhg.jpg"
           }
 
         };
