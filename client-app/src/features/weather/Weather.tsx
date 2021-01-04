@@ -22,17 +22,12 @@ const Weather = () => {
       <Card.Group itemsPerRow={5}>
         {spotsList.map((spot: ISpot) => (
           <Card key={spot.id} onClick={() => getWeatherAndSpot(spot.id)}>
-            <Image
-              src={
-                "https://media-cdn.tripadvisor.com/media/photo-s/18/57/8a/a2/copacabana.jpg"
-              }
-            />
+            <Image src={spot.imageUrl} />
             <Card.Content>
               <Card.Header textAlign="center">
-                <div>{spot.name}</div>
+                <div>{spot.name}, {spot.country}</div>
               </Card.Header>
-              <Card.Meta textAlign="center">
-              </Card.Meta>
+              <Card.Meta textAlign="center"></Card.Meta>
             </Card.Content>
           </Card>
         ))}
@@ -40,23 +35,31 @@ const Weather = () => {
       <Table celled fixed singleLine>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Nazwa Spotu: {currentSpot?.name}</Table.HeaderCell>
+            <Table.HeaderCell>
+              Nazwa Spotu: {currentSpot?.name}
+            </Table.HeaderCell>
             <Table.HeaderCell>Wartość</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
-        <Table.Row>
+          <Table.Row>
             <Table.Cell>Temperatura powietrza</Table.Cell>
-            <Table.Cell>{weather?.airTemperature} {weather?.airTemperature && "°C"}</Table.Cell>
+            <Table.Cell>
+              {weather?.airTemperature} {weather?.airTemperature && "°C"}
+            </Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>Temperatura wody</Table.Cell>
-            <Table.Cell>{weather?.waterTemperature} {weather?.waterTemperature && "°C"}</Table.Cell>
+            <Table.Cell>
+              {weather?.waterTemperature} {weather?.waterTemperature && "°C"}
+            </Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>Prędkość wiatru</Table.Cell>
-            <Table.Cell>{weather?.windSpeed} {weather?.windSpeed && "m/s"}</Table.Cell>
+            <Table.Cell>
+              {weather?.windSpeed} {weather?.windSpeed && "m/s"}
+            </Table.Cell>
           </Table.Row>
 
           <Table.Row>
@@ -66,12 +69,18 @@ const Weather = () => {
 
           <Table.Row>
             <Table.Cell>Zachmurzenie</Table.Cell>
-            <Table.Cell>{weather?.cloudiness}{weather?.cloudiness && "%"}</Table.Cell>
+            <Table.Cell>
+              {weather?.cloudiness}
+              {weather?.cloudiness && "%"}
+            </Table.Cell>
           </Table.Row>
 
           <Table.Row>
             <Table.Cell>Wysokośc fali</Table.Cell>
-            <Table.Cell>{weather?.tideHeight}{weather?.tideHeight && "m"}</Table.Cell>
+            <Table.Cell>
+              {weather?.tideHeight}
+              {weather?.tideHeight && "m"}
+            </Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>

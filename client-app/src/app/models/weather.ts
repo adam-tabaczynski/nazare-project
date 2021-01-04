@@ -1,8 +1,11 @@
 export interface ISpot {
   id: string,
+  country: string,
   latitude: string,
   longitude: string,
   name: string,
+  imageUrl: string,
+  bio: string,
 }
 
 export interface IWeather {
