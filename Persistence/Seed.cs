@@ -19,23 +19,51 @@ namespace Persistence
               new AppUser
               {
                   Id = "a",
-                  DisplayName = "Bob",
-                  UserName = "bob",
-                  Email = "bob@test.com"
+                  DisplayName = "Kuba",
+                  UserName = "kuba",
+                  Email = "kuba@test.com"
               },
               new AppUser
               {
                   Id = "b",
-                  DisplayName = "Jane",
-                  UserName = "jane",
-                  Email = "jane@test.com"
+                  DisplayName = "Piotrek",
+                  UserName = "piotr",
+                  Email = "piotr@test.com"
               },
               new AppUser
               {
                   Id = "c",
-                  DisplayName = "Tom",
-                  UserName = "tom",
-                  Email = "tom@test.com"
+                  DisplayName = "Natalia",
+                  UserName = "natalia",
+                  Email = "natalia@test.com"
+              },
+              new AppUser
+              {
+                  Id = "d",
+                  DisplayName = "Jessica",
+                  UserName = "jessica",
+                  Email = "jessica@test.com"
+              },
+              new AppUser
+              {
+                  Id = "e",
+                  DisplayName = "Camping Polaris",
+                  UserName = "polaris",
+                  Email = "polaris@test.com"
+              },
+              new AppUser
+              {
+                  Id = "f",
+                  DisplayName = "Chałupy 6 Easy Surf",
+                  UserName = "easysurf",
+                  Email = "easysurf@test.com"
+              },
+              new AppUser
+              {
+                  Id = "g",
+                  DisplayName = "Kites Control",
+                  UserName = "kites",
+                  Email = "kites@test.com"
               },
           };
 
@@ -51,232 +79,161 @@ namespace Persistence
         {
             new Activity
             {
-                Title = "Past Activity 1",
-                Date = DateTime.Now.AddMonths(-2),
-                Description = "Activity 2 months ago",
-                Category = "Drinks",
-                City = "London",
-                Venue = "Pub",
+                Title = "Darmowa nauka windsurfingu dla dzieci",
+                Date = new DateTime(2021, 7, 14, 12, 0, 0),
+                Description = "Nauka pływania dla dzieci w wieku od 7 do 13 lat. Zapraszamy wszystkich na darmowy kurs z podstaw windsurfingu, każda zapisana osoba otrzyma godzinę szkolenia za darmo.",
+                Category = "Szkolenie",
+                City = "Camping Polaris",
+                Venue = "Główny pomost",
                 UserActivities = new List<UserActivity>
                 {
                     new UserActivity
                     {
-                        AppUserId = "a",
+                        AppUserId = "e",
                         IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(-2)
+                        DateJoined = new DateTime(2021, 7, 14, 12, 0, 0)
                     }
                 }
             },
             new Activity
             {
-                Title = "Past Activity 2",
-                Date = DateTime.Now.AddMonths(-1),
-                Description = "Activity 1 month ago",
-                Category = "Culture",
-                City = "Paris",
-                Venue = "The Louvre",
+                Title = "Zawody surfingowe Surfing Challenge 2021",
+                Date = new DateTime(2021, 7, 25, 10, 0, 0),
+                Description = "Polskie Stowarzyszenie Surfingu zaprasza na XV edycję Mistrzostw Polski w Surfingu – Polish Surfing Challenge 2019. Zawody zostaną rozegrane na Półwyspie Helskim w gminie Władysławowo.  Zawodnicy i zawodniczki będą rywalizować w następujących dyscyplinach: Surfing OPEN, Surfing Juniors, SUP Surfing.",
+                Category = "Zawody",
+                City = "Władysławowo",
+                Venue = "Zatoka",
                 UserActivities = new List<UserActivity>
                 {
                     new UserActivity
                     {
-                        AppUserId = "b",
+                        AppUserId = "f",
                         IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(-1)
+                        DateJoined = new DateTime(2021, 2, 1, 12, 0, 0)
                     },
                     new UserActivity
                     {
                         AppUserId = "a",
                         IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(-1)
+                        DateJoined = new DateTime(2021, 5, 1, 12, 0, 0)
+                    },
+                    new UserActivity
+                    {
+                        AppUserId = "d",
+                        IsHost = false,
+                        DateJoined = new DateTime(2021, 5, 10, 12, 0, 0)
                     },
                 }
             },
             new Activity
             {
-                Title = "Future Activity 1",
-                Date = DateTime.Now.AddMonths(1),
-                Description = "Activity 1 month in future",
-                Category = "Music",
-                City = "London",
-                Venue = "Wembly Stadium",
+                Title = "Ford Kite Cup 2021",
+                Date = new DateTime(2021, 8, 01, 10, 0, 0),
+                Description = "Zapraszamy na XV sezon Ford Kite Cup organizowany przez Polski Związek Kiteboardingu. Zawody będą trwały dwa dni, zaplanowane jest około 20 wyścigów.",
+                Category = "Zawody",
+                City = "Chałupy",
+                Venue = "Kemping Chałupy 3",
                 UserActivities = new List<UserActivity>
                 {
                     new UserActivity
                     {
-                        AppUserId = "b",
+                        AppUserId = "g",
                         IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(1)
+                        DateJoined = new DateTime(2021, 1, 1, 10, 0, 0)
+                    },
+                    new UserActivity
+                    {
+                        AppUserId = "c",
+                        IsHost = false,
+                        DateJoined = new DateTime(2021, 4, 1, 12, 0, 0)
+                    },
+                }
+            },
+            new Activity
+            {
+                Title = "Salt Wave Festival 2021",
+                Date = new DateTime(2021, 8, 20, 18, 0, 0),
+                Description = "Zapraszamy wszystkich wielbicieli nadmorskiego klimatu i dobrej muzyki na koncert kończący sezon nad morzem. Zagrają m. in: Pro8l3m, The Cinematic Orchestra, The Dumplings oraz Fisz Emdae Tworzywo.",
+                Category = "Koncert",
+                City = "Jastarnia",
+                Venue = "Lotnisko Jastarnia",
+                UserActivities = new List<UserActivity>
+                {
+                    new UserActivity
+                    {
+                        AppUserId = "d",
+                        IsHost = true,
+                        DateJoined = new DateTime(2020, 9, 1, 18, 0, 0)
                     },
                     new UserActivity
                     {
                         AppUserId = "a",
                         IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(1)
+                        DateJoined = new DateTime(2021, 4, 20, 15, 0, 0)
+                    },
+                    new UserActivity
+                    {
+                        AppUserId = "b",
+                        IsHost = false,
+                        DateJoined = new DateTime(2021, 5, 10, 12, 0, 0)
+                    },
+                    new UserActivity
+                    {
+                        AppUserId = "c",
+                        IsHost = false,
+                        DateJoined = new DateTime(2021, 5, 1, 14, 0, 0)
                     },
                 }
             },
             new Activity
             {
-                Title = "Future Activity 2",
-                Date = DateTime.Now.AddMonths(2),
-                Description = "Activity 2 months in future",
-                Category = "Food",
-                City = "London",
-                Venue = "Jamies Italian",
+                Title = "Poranne pływanie przy wejściu nr 7",
+                Date = new DateTime(2021, 7, 12, 8, 0, 0),
+                Description = "Cześć, 12 lipca prognozy zapowiadają super pogodę na surfing, wpadajcie popływać z nami!",
+                Category = "Spotkanie",
+                City = "Kuźnica",
+                Venue = "Wejście nr 7",
                 UserActivities = new List<UserActivity>
                 {
                     new UserActivity
                     {
                         AppUserId = "c",
                         IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(2)
+                        DateJoined = new DateTime(2021, 7, 10, 19, 0, 0),
                     },
                     new UserActivity
                     {
-                        AppUserId = "a",
+                        AppUserId = "d",
                         IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(2)
+                        DateJoined = new DateTime(2021, 7, 11, 11, 0, 0)
                     },
                 }
             },
             new Activity
             {
-                Title = "Future Activity 3",
-                Date = DateTime.Now.AddMonths(3),
-                Description = "Activity 3 months in future",
-                Category = "Drinks",
-                City = "London",
-                Venue = "Pub",
+                Title = "28 urodziny Kuby",
+                Date = new DateTime(2021, 8, 15, 20, 0, 0),
+                Description = "Cześć, 15tego sierpnia świętuje swoje 28 urodziny i z tej okazji zapraszam was na spotkanie na Molo Surf Bar.",
+                Category = "Impreza",
+                City = "Jastarnia",
+                Venue = "Molo Surf Bar",
                 UserActivities = new List<UserActivity>
                 {
                     new UserActivity
                     {
-                        AppUserId = "b",
+                        AppUserId = "a",
                         IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(3)
+                        DateJoined = new DateTime(2021, 8, 1, 16, 0, 0),
                     },
+
                     new UserActivity
                     {
                         AppUserId = "c",
                         IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(3)
-                    },
-                }
-            },
-            new Activity
-            {
-                Title = "Future Activity 4",
-                Date = DateTime.Now.AddMonths(4),
-                Description = "Activity 4 months in future",
-                Category = "Culture",
-                City = "London",
-                Venue = "British Museum",
-                UserActivities = new List<UserActivity>
-                {
-                    new UserActivity
-                    {
-                        AppUserId = "a",
-                        IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(4)
+                        DateJoined = new DateTime(2021, 8, 5, 16, 0, 0),
                     }
                 }
             },
-            new Activity
-            {
-                Title = "Future Activity 5",
-                Date = DateTime.Now.AddMonths(5),
-                Description = "Activity 5 months in future",
-                Category = "Drinks",
-                City = "London",
-                Venue = "Punch and Judy",
-                UserActivities = new List<UserActivity>
-                {
-                    new UserActivity
-                    {
-                        AppUserId = "c",
-                        IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(5)
-                    },
-                    new UserActivity
-                    {
-                        AppUserId = "b",
-                        IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(5)
-                    },
-                }
-            },
-            new Activity
-            {
-                Title = "Future Activity 6",
-                Date = DateTime.Now.AddMonths(6),
-                Description = "Activity 6 months in future",
-                Category = "Music",
-                City = "London",
-                Venue = "O2 Arena",
-                UserActivities = new List<UserActivity>
-                {
-                    new UserActivity
-                    {
-                        AppUserId = "a",
-                        IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(6)
-                    },
-                    new UserActivity
-                    {
-                        AppUserId = "b",
-                        IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(6)
-                    },
-                }
-            },
-            new Activity
-            {
-                Title = "Future Activity 7",
-                Date = DateTime.Now.AddMonths(7),
-                Description = "Activity 7 months in future",
-                Category = "Travel",
-                City = "Berlin",
-                Venue = "All",
-                UserActivities = new List<UserActivity>
-                {
-                    new UserActivity
-                    {
-                        AppUserId = "a",
-                        IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(7)
-                    },
-                    new UserActivity
-                    {
-                        AppUserId = "c",
-                        IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(7)
-                    },
-                }
-            },
-            new Activity
-            {
-                Title = "Future Activity 8",
-                Date = DateTime.Now.AddMonths(8),
-                Description = "Activity 8 months in future",
-                Category = "Drinks",
-                City = "London",
-                Venue = "Pub",
-                UserActivities = new List<UserActivity>
-                {
-                    new UserActivity
-                    {
-                        AppUserId = "b",
-                        IsHost = true,
-                        DateJoined = DateTime.Now.AddMonths(8)
-                    },
-                    new UserActivity
-                    {
-                        AppUserId = "a",
-                        IsHost = false,
-                        DateJoined = DateTime.Now.AddMonths(8)
-                    },
-                }
-            }
         };
 
         await context.Activities.AddRangeAsync(activities);
@@ -288,8 +245,8 @@ namespace Persistence
         {
           new Spot
           {
-            Latitude = -22.97,
-            Longitude = -43.18,
+            Latitude = -22.969,
+            Longitude = -43.187,
             Name = "Copacabana",
             Country = "Brazylia",
             Bio = "Some fancy info",
@@ -297,13 +254,85 @@ namespace Persistence
           },
           new Spot
           {
-            Latitude = 54.36,
-            Longitude = 18.48,
-            Name = "Hel",
+            Latitude = 39.601,
+            Longitude = -9.070,
+            Name = "Nazare",
+            Country = "Portugalia",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372233/nazare_uomqnp.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.695,
+            Longitude = 18.679,
+            Name = "Jastarnia",
             Country = "Polska",
             Bio = "Some fancy info",
-            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1609760892/hel_jyavhg.jpg"
-          }
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372232/jastarnia_cnzcag.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.176,
+            Longitude = 15.583,
+            Name = "Kołobrzeg",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372232/ko%C5%82obrzeg_hclhuy.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.735,
+            Longitude = 18.580,
+            Name = "Kuźnica",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372232/kuznica_kjm3qe.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.791,
+            Longitude = 18.403,
+            Name = "Władysławowo",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372233/w%C5%82%C4%85dek_sxoarj.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.760,
+            Longitude = 17.556,
+            Name = "Łeba",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610373465/%C5%82eba_tgyeov.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.631,
+            Longitude = 18.497,
+            Name = "Rewa",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610373465/rewa_gks4pl.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.718,
+            Longitude = 18.409,
+            Name = "Puck",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610373464/zatoka_pucka_x0t8f7.jpg"
+          },
+          new Spot
+          {
+            Latitude = 54.759,
+            Longitude = 18.509,
+            Name = "Chałupy",
+            Country = "Polska",
+            Bio = "Some fancy info",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610373720/cha%C5%82upy_qwr1jl.jpg"
+          },
 
         };
         await context.Spots.AddRangeAsync(spots);

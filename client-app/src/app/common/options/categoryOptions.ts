@@ -1,8 +1,8 @@
 export const category = [
-  { key: 'drinks', text: 'Drinks', value: 'drinks' },
-  { key: 'culture', text: 'Culture', value: 'culture' },
-  { key: 'film', text: 'Film', value: 'film' },
-  { key: 'food', text: 'Food', value: 'food' },
-  { key: 'music', text: 'Music', value: 'music' },
-  { key: 'travel', text: 'Travel', value: 'travel' }
+  { key: 'prezentacja', text: 'Prezentacja produktu', value: 'prezentacja' },
+  { key: 'szkolenie', text: 'Szkolenie', value: 'szkolenie' },
+  { key: 'zawody', text: 'Zawody', value: 'zawody' },
+  { key: 'impreza', text: 'Impreza', value: 'impreza' },
+  { key: 'koncert', text: 'Koncert', value: 'koncert' },
+  { key: 'spotkanie', text: 'Spotkanie', value: 'spotkanie' }
 ];
