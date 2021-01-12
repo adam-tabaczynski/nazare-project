@@ -6,6 +6,10 @@ import { format } from "date-fns";
 import ActivityListItemAttendees from "./ActivityListItemAttendees";
 import { pl } from "date-fns/locale";
 
+const buttonGap = {
+  marginTop: "15px",
+};
+
 const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
   const host = activity.attendees.filter((x) => x.isHost)[0];
   return (
@@ -25,24 +29,19 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
               </Item.Header>
               <Item.Description>
                 Organizowane przez
-                <Link to={`/profile/${host.username}`}> {host.displayName}</Link>{" "}
+                <Link to={`/profile/${host.username}`}>
+                  {" "}
+                  {host.displayName}
+                </Link>{" "}
               </Item.Description>
               {activity.isHost && (
                 <Item.Description>
-                  <Label
-                    basic
-                    color="orange"
-                    content="Organizujesz"
-                  />
+                  <Label basic color="orange" content="Organizujesz" />
                 </Item.Description>
               )}
               {activity.isGoing && !activity.isHost && (
                 <Item.Description>
-                  <Label
-                    basic
-                    color="green"
-                    content="Uczestniczysz"
-                  />
+                  <Label basic color="green" content="Uczestniczysz" />
                 </Item.Description>
               )}
             </Item.Content>
@@ -57,14 +56,17 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
         <ActivityListItemAttendees attendees={activity.attendees} />
       </Segment>
       <Segment clearing>
-      <span>{activity.description}</span>
-        <Button
-          as={Link}
-          to={`/activities/${activity.id}`}
-          floated="right"
-          content="Zobacz"
-          color="blue"
-        />
+        <span>{activity.description}</span>
+        <div>
+          <Button
+            as={Link}
+            style={buttonGap}
+            to={`/activities/${activity.id}`}
+            floated="right"
+            content="Zobacz"
+            color="blue"
+          />
+        </div>
       </Segment>
     </Segment.Group>
   );

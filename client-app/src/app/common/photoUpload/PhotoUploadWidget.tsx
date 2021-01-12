@@ -27,12 +27,12 @@ const PhotoUploadWidget: React.FC<IProps> = ({ loading, uploadPhoto }) => {
     <Fragment>
       <Grid>
         <Grid.Column width={4}>
-          <Header color="teal" sub content="Step 1 - Add Photo" />
+          <Header color="teal" sub content="Krok 1 - Dodaj zdjęcie" />
           <PhotoWidgetDropzone setFiles={setFiles} />
         </Grid.Column>
         <Grid.Column width={1} />
         <Grid.Column width={4}>
-          <Header sub color="teal" content="Step 2 - Resize image" />
+          <Header sub color="teal" content="Krok 2 - Określ wymiary zdjęcia" />
           {files.length > 0 && (
             <PhotoWidgetCropper
               setImage={setImage}
@@ -42,7 +42,7 @@ const PhotoUploadWidget: React.FC<IProps> = ({ loading, uploadPhoto }) => {
         </Grid.Column>
         <Grid.Column width={1} />
         <Grid.Column width={4}>
-          <Header sub color="teal" content="Step 3 - Preview & Upload" />
+          <Header sub color="teal" content="Krok 3 - Podgląd zdjęcia" />
           {files.length > 0 && (
             <Fragment>
               <div

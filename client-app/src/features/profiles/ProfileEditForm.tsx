@@ -27,7 +27,7 @@ const ProfileEditForm: React.FC<IProps> = ({ updateProfile, profile }) => {
           <Field
             name="displayName"
             component={TextInput}
-            placeholder="Display Name"
+            placeholder="Nazwa wyświetlana"
             value={profile!.displayName}
           />
           <Field
@@ -42,7 +42,7 @@ const ProfileEditForm: React.FC<IProps> = ({ updateProfile, profile }) => {
             floated="right"
             disabled={invalid || pristine}
             positive
-            content="Update profile"
+            content="Zapisz zmiany"
           />
         </Form>
       )}

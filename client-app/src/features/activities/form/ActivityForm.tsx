@@ -23,13 +23,13 @@ const validate = combineValidators({
   title: isRequired({ message: "Podanie tytułu wydarzenia jest obowiązkowe" }),
   category: isRequired({ message: "Podanie kategorii wydarzenia jest obowiązkowe" }),
   description: composeValidators(
-    isRequired("Description"),
+    isRequired({message: "Wpisanie opisu wydarzenia jest obowiązkowe"}),
     hasLengthGreaterThan(4)({
       message: "Opis musi mieć conajmniej 5 znaków",
     })
   )(),
-  city: isRequired({ message: "Podanie nazwy spotu jest obowiązkowe" }),
-  venue: isRequired({ message: "Podanie nazwy kraju jest obowiązkowe" }),
+  city: isRequired({ message: "Podanie miasta jest obowiązkowe" }),
+  venue: isRequired({ message: "Podanie adresu jest obowiązkowe" }),
   date: isRequired({ message: "Podanie dnia wydarzenia jest obowiązkowe" }),
   time: isRequired({ message: "Podanie godziny wydarzenia jest obowiązkowe" }),
 });
@@ -138,13 +138,13 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
                 </Form.Group>
                 <Field
                   name="city"
-                  placeholder="Spot"
+                  placeholder="Miasto"
                   value={activity.city}
                   component={TextInput}
                 />
                 <Field
                   name="venue"
-                  placeholder="Kraj"
+                  placeholder="Adres"
                   value={activity.venue}
                   component={TextInput}
                 />
@@ -154,7 +154,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
                   floated="right"
                   positive
                   type="submit"
-                  content="Dodaj"
+                  content="Zatwierdź"
                 />
                 <Button
                   onClick={

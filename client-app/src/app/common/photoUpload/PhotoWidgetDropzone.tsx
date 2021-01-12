@@ -41,7 +41,7 @@ const PhotoWidgetDropzone: React.FC<IProps> = ({ setFiles }) => {
     >
       <input {...getInputProps()} />
       <Icon name='upload' size='huge' />
-      <Header content='Drop image here' />
+      <Header content='Przeciągnij zdjęcie tutaj lub kliknij aby wybrać plik' />
     </div>
   );
 };

@@ -49,6 +49,7 @@ export default class WeatherStore {
   };
 
   @action getWeatherAndSpot = async (id: string) => {
+    this.weatherCardWasClicked = true;
     this.getSpot(id);
     this.getWeather(id);
   };
