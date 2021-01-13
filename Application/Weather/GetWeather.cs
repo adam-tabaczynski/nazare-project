@@ -35,29 +35,18 @@ namespace Application.Weather
         using (var client = new HttpClient())
         {
 
-          client.BaseAddress = new Uri("http://api.openweathermap.org");
-          var response = await client.GetAsync($"/data/2.5/weather?lat={latitude}&lon={longitude}&appid=97b8299dbeb8ec978fa2de2314c76e24&units=metric");
-          response.EnsureSuccessStatusCode();
-
-          var stringResult = await response.Content.ReadAsStringAsync();
-          RootOWA rawWeather = JsonConvert.DeserializeObject<RootOWA>(stringResult);
-
-          weatherResponse.AirTemperature = rawWeather.main.temp;
-          weatherResponse.WindSpeed = rawWeather.wind.speed;
-          weatherResponse.Cloudiness = rawWeather.clouds.all;
-        }
-        using (var client = new HttpClient())
-        {
-
           client.BaseAddress = new Uri("http://api.worldweatheronline.com/premium/v1/marine.ashx");
-          var response = await client.GetAsync($"?key=78b44e53d6a24d13ba895644210401&format=json&q={latitude},{longitude}&tide=yes");
+          var response = await client.GetAsync($"?key=78b44e53d6a24d13ba895644210401&format=json&q={latitude},{longitude}");
           response.EnsureSuccessStatusCode();
 
           var stringResult = await response.Content.ReadAsStringAsync();
           RootWWO rawWeather = JsonConvert.DeserializeObject<RootWWO>(stringResult);
 
+          weatherResponse.AirTemperature = rawWeather.data.weather[0].hourly[5].tempC;
           weatherResponse.WaterTemperature = rawWeather.data.weather[0].hourly[5].waterTemp_C;
-          weatherResponse.TideHeight = rawWeather.data.weather[0].tides[0].tide_data[2].tideHeight_mt;
+          weatherResponse.WindSpeed = rawWeather.data.weather[0].hourly[5].windspeedKmph;
+          weatherResponse.Cloudiness = rawWeather.data.weather[0].hourly[5].cloudcover;
+          weatherResponse.TideHeight = rawWeather.data.weather[0].hourly[5].sigHeight_m;
           weatherResponse.WindAngle = rawWeather.data.weather[0].hourly[5].winddir16Point;
         }
 

@@ -89,7 +89,7 @@ const Weather = () => {
                   <Table.Row>
                     <Table.Cell>Prędkość wiatru</Table.Cell>
                     <Table.Cell>
-                      {weather?.windSpeed} {weather?.windSpeed && "m/s"}
+                      {weather?.windSpeed} {weather?.windSpeed && "km/h"}
                     </Table.Cell>
                   </Table.Row>
 
