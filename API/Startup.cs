@@ -38,6 +38,35 @@ namespace API
 
     public IConfiguration Configuration { get; }
 
+    public void ConfigureDevelopmentServices(IServiceCollection services)
+    {
+      services.AddDbContext<DataContext>(opt =>
+      {
+        // Getting the ConnectionStrings (check tip over GetConnectionString) which are called DefaultConnection.
+        // Taken from appsettings.json
+        opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
+
+        // Allows using Lazy Loading.
+        opt.UseLazyLoadingProxies();
+      });
+
+      ConfigureServices(services);
+    }
+
+    public void ConfigureProductionServices(IServiceCollection services)
+    {
+      services.AddDbContext<DataContext>(opt =>
+      {
+        // Getting the ConnectionStrings (check tip over GetConnectionString) which are called DefaultConnection.
+        // Taken from appsettings.json
+        opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+
+        // Allows using Lazy Loading.
+        opt.UseLazyLoadingProxies();
+      });
+
+      ConfigureServices(services);
+    }
     // This method gets called by the runtime. Use this method to add services to the container.
     // Here I add any Dependency Injection services that I will need to use anywhere in the application.
     public void ConfigureServices(IServiceCollection services)
