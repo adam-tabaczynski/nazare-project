@@ -21,49 +21,112 @@ namespace Persistence
                   Id = "a",
                   DisplayName = "Kuba",
                   UserName = "kuba",
-                  Email = "kuba@test.com"
+                  Email = "kuba@test.com",
+                  Photos = new List<Photo>
+                  {
+                    new Photo
+                    {
+                      Id = "a",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610388689/sogtccaklenjjkkny8rx.jpg",
+                      isMain = true
+                    }
+                  }
               },
               new AppUser
               {
                   Id = "b",
                   DisplayName = "Piotrek",
                   UserName = "piotr",
-                  Email = "piotr@test.com"
+                  Email = "piotr@test.com",
+                  Photos = new List<Photo>
+                  {
+                    new Photo
+                    {
+                      Id = "b",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610388720/sdkp41txqx4wettwtivr.jpg",
+                      isMain = true
+                    }
+                  }
               },
               new AppUser
               {
                   Id = "c",
                   DisplayName = "Natalia",
                   UserName = "natalia",
-                  Email = "natalia@test.com"
+                  Email = "natalia@test.com",
+                  Photos = new List<Photo>
+                  {
+                    new Photo
+                    {
+                      Id = "c",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610389032/zcwnjl1uyhn68lqcutsr.jpg",
+                      isMain = true
+                    }
+                  }
               },
               new AppUser
               {
                   Id = "d",
                   DisplayName = "Jessica",
                   UserName = "jessica",
-                  Email = "jessica@test.com"
+                  Email = "jessica@test.com",
+                  Photos = new List<Photo>
+                  {
+                    new Photo
+                    {
+                      Id = "d",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610388899/siq5d0lc6h4wxloe39yd.jpg",
+                      isMain = true
+                    }
+                  }
               },
               new AppUser
               {
                   Id = "e",
                   DisplayName = "Camping Polaris",
                   UserName = "polaris",
-                  Email = "polaris@test.com"
+                  Email = "polaris@test.com",
+                  Photos = new List<Photo>
+                  {
+                    new Photo
+                    {
+                      Id = "e",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610389072/pcpbhyloqf0l53ffxzuj.jpg",
+                      isMain = true
+                    }
+                  }
               },
               new AppUser
               {
                   Id = "f",
                   DisplayName = "Chałupy 6 Easy Surf",
                   UserName = "easysurf",
-                  Email = "easysurf@test.com"
+                  Email = "easysurf@test.com",
+                  Photos = new List<Photo>
+                  {
+                    new Photo
+                    {
+                      Id = "f",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610389202/lwhrkg6oo9bemaz4d8nc.jpg",
+                      isMain = true
+                    }
+                  }
               },
               new AppUser
               {
                   Id = "g",
                   DisplayName = "Kites Control",
                   UserName = "kites",
-                  Email = "kites@test.com"
+                  Email = "kites@test.com",
+                  Photos = new List<Photo>
+                  {
+                    new Photo
+                    {
+                      Id = "g",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610389149/ez3bhgnlommyfx3nyrjt.jpg",
+                      isMain = true
+                    }
+                  }
               },
           };
 
