@@ -99,7 +99,7 @@ export default class ActivityStore {
 
   @action createHubConnection = (activityId: string) => {
     this.hubConnection = new HubConnectionBuilder()
-      .withUrl(process.env.REACT_APP_API_URL!, {
+      .withUrl(process.env.REACT_APP_API_CHAT_URL!, {
         accessTokenFactory: () => this.rootStore.commonStore.token!,
       })
       .configureLogging(LogLevel.Information)
@@ -123,13 +123,16 @@ export default class ActivityStore {
     });
 
     this.hubConnection.on("Send", (message) => {
-      toast.info(message);
+      // toast.info(message);
     });
   };
 
   @action stopHubConnection = () => {
     this.hubConnection!.invoke("RemoveFromGroup", this.activity!.id)
       .then(() => {
+        runInAction(() => {
+          this.activity = null;
+        })
         this.hubConnection!.stop();
       })
       .then(() => console.log("Connection stopped"))

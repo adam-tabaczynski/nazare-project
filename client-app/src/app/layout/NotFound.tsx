@@ -7,11 +7,11 @@ const NotFound = () => {
         <Segment placeholder>
             <Header icon>
                 <Icon name='search' />
-                Oops - we've looked everywhere but couldn't find this.
+                Błędny adres - nie ma takiej podstrony.
             </Header>
             <Segment.Inline>
-                <Button as={Link} to='/activities' primary>
-                    Return to Activities page
+                <Button as={Link} to='/' primary>
+                    Powrót do panelu powitalnego
                 </Button>
             </Segment.Inline>
         </Segment>

@@ -46,7 +46,9 @@ export const ActivityDetailedChat = () => {
                     {comment.displayName}
                   </Comment.Author>
                   <Comment.Metadata>
-                    <div>{formatDistance(comment.createdAt, new Date())}</div>
+                    <div>
+                      {formatDistance(new Date(comment.createdAt), new Date())}
+                    </div>
                   </Comment.Metadata>
                   <Comment.Text>{comment.body}</Comment.Text>
                 </Comment.Content>
@@ -57,10 +59,10 @@ export const ActivityDetailedChat = () => {
             render={({ handleSubmit, submitting, form }) => (
               <Form onSubmit={() => handleSubmit()!.then(() => form.reset())}>
                 <Field
-                  name='body'
+                  name="body"
                   component={TextAreaInput}
                   rows={2}
-                  placeholder='Dodaj swój komentarz'
+                  placeholder="Dodaj swój komentarz"
                 />
                 <Button
                   content="Dodaj odpowiedź"
