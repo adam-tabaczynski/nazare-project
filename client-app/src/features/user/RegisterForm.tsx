@@ -9,10 +9,10 @@ import { IUserFormValues } from "../../app/models/user";
 import { RootStoreContext } from "../../app/stores/rootStore";
 
 const validate = combineValidators({
-  username: isRequired("username"),
-  displayName: isRequired("display name"),
-  email: isRequired("email"),
-  password: isRequired("password"),
+  username: isRequired("Username"),
+  displayName: isRequired("DisplayName"),
+  email: isRequired("Email"),
+  password: isRequired("Password"),
 });
 
 const RegisterForm = () => {

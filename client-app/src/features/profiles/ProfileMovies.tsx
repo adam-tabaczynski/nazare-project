@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Grid, Segment } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
 
 const divStyle = {
   display: "flex",

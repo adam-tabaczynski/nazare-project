@@ -3,7 +3,6 @@ import React, { Fragment, useContext, useEffect } from "react";
 import {
   Card,
   Grid,
-  GridColumn,
   Header,
   Image,
   Segment,
