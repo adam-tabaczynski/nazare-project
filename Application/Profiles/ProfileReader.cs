@@ -38,6 +38,7 @@ namespace Application.Profiles
         Image = user.Photos.FirstOrDefault(x => x.isMain)?.Url,
         Photos = user.Photos,
         Bio = user.Bio,
+        Movie = user.Movie,
         FollowersCount = user.Followers.Count(),
         FollowingCount = user.Followings.Count()
       };

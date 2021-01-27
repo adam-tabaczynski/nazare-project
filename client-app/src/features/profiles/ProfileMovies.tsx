@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { Segment } from "semantic-ui-react";
+import { RootStoreContext } from "../../app/stores/rootStore";
 
 const divStyle = {
   display: "flex",
@@ -7,6 +8,18 @@ const divStyle = {
 };
 
 const ProfileMovies = () => {
+
+  const rootStore = useContext(RootStoreContext);
+  const {
+    profile,
+    isCurrentUser,
+    uploadPhoto,
+    uploadingPhoto,
+    setMainPhoto,
+    deletePhoto,
+    loading,
+  } = rootStore.profileStore;
+
   return (
     <Fragment>
       <Segment>
@@ -15,7 +28,7 @@ const ProfileMovies = () => {
             title="1"
             width="480"
             height="360"
-            src="https://www.youtube.com/embed/xB0lb71GSFk"
+            src={profile?.movie}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

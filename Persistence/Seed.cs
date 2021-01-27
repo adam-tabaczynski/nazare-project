@@ -22,6 +22,7 @@ namespace Persistence
                   DisplayName = "Kuba",
                   UserName = "kuba",
                   Email = "kuba@test.com",
+                  Movie = "https://www.youtube.com/embed/MaUcTH2MCCw",
                   Photos = new List<Photo>
                   {
                     new Photo
@@ -38,6 +39,7 @@ namespace Persistence
                   DisplayName = "Piotrek",
                   UserName = "piotr",
                   Email = "piotr@test.com",
+                  Movie = "https://www.youtube.com/embed/hIUrfeoHLCw",
                   Photos = new List<Photo>
                   {
                     new Photo
@@ -54,6 +56,7 @@ namespace Persistence
                   DisplayName = "Natalia",
                   UserName = "natalia",
                   Email = "natalia@test.com",
+                  Movie = "https://www.youtube.com/embed/spqXq9Z6xio",
                   Photos = new List<Photo>
                   {
                     new Photo
@@ -70,6 +73,7 @@ namespace Persistence
                   DisplayName = "Jessica",
                   UserName = "jessica",
                   Email = "jessica@test.com",
+                  Movie = " https://www.youtube.com/embed/hg4NEh2gjeQ",                 
                   Photos = new List<Photo>
                   {
                     new Photo
@@ -86,6 +90,7 @@ namespace Persistence
                   DisplayName = "Camping Polaris",
                   UserName = "polaris",
                   Email = "polaris@test.com",
+                  Movie = "https://www.youtube.com/embed/xl0kSHQMKGQ",                 
                   Photos = new List<Photo>
                   {
                     new Photo
@@ -102,6 +107,7 @@ namespace Persistence
                   DisplayName = "Chałupy 6 Easy Surf",
                   UserName = "easysurf",
                   Email = "easysurf@test.com",
+                  Movie = "https://www.youtube.com/embed/xB0lb71GSFk",
                   Photos = new List<Photo>
                   {
                     new Photo
@@ -118,6 +124,7 @@ namespace Persistence
                   DisplayName = "Kites Control",
                   UserName = "kites",
                   Email = "kites@test.com",
+                  Movie = "https://www.youtube.com/embed/gL2dVi4J-Lk",
                   Photos = new List<Photo>
                   {
                     new Photo

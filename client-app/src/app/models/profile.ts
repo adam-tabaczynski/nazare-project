@@ -6,7 +6,8 @@ export interface IProfile {
   following: boolean,
   followersCount: number,
   followingCount: number,
-  photos: IPhoto[]
+  photos: IPhoto[],
+  movie: string
 }
 
 export interface IPhoto {
@@ -21,3 +22,4 @@ export interface IUserActivity {
   category: string,
   date: Date;
 }
+

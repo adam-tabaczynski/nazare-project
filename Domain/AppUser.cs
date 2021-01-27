@@ -7,6 +7,7 @@ namespace Domain
     {
         public string DisplayName { get; set; }
         public string Bio { get; set; }
+        public string  Movie { get; set; }
         public virtual ICollection<UserActivity> UserActivities { get; set; }
         // virtual is a keyword for Lazy Loading to work
         public virtual ICollection<Photo> Photos { get; set; }
