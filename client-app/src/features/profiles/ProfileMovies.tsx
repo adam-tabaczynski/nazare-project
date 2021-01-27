@@ -11,13 +11,7 @@ const ProfileMovies = () => {
 
   const rootStore = useContext(RootStoreContext);
   const {
-    profile,
-    isCurrentUser,
-    uploadPhoto,
-    uploadingPhoto,
-    setMainPhoto,
-    deletePhoto,
-    loading,
+    profile
   } = rootStore.profileStore;
 
   return (

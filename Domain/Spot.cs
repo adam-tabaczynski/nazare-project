@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 namespace Domain
 {
   public class Spot
@@ -10,5 +12,6 @@ namespace Domain
     public string Name { get; set; }
     public string ImageUrl { get; set; }
     public string Bio { get; set; }
+    public virtual ICollection<SpotPhoto> Photos { get; set; }
   }
 }

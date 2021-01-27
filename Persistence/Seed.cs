@@ -321,6 +321,7 @@ namespace Persistence
             Country = "Brazylia",
             Bio = "Some fancy info",
             ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1609760892/Copacabana_emz5bs.jpg"
+            
           },
           new Spot
           {
@@ -337,8 +338,27 @@ namespace Persistence
             Longitude = 18.679,
             Name = "Jastarnia",
             Country = "Polska",
-            Bio = "Some fancy info",
-            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372232/jastarnia_cnzcag.jpg"
+            Bio = "Jedna z najbardziej znanych miejscowości na windsurfingowej i kitesurfingowej mapie Polski - duże imprezy sportowe, niepowtarzalny klimat oraz dobre warunki pogodowe w trakcie lata powodują, że jest to miejsce do którego chętnie kierują się osoby spragnione adrenaliny i rozrywki.",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372232/jastarnia_cnzcag.jpg",
+            Photos = new List<SpotPhoto>
+            {
+              new SpotPhoto
+              {
+                Id = "a",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1611758015/noc_byn187.jpg"
+              },
+
+              new SpotPhoto
+              {
+                Id = "b",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1611758016/windsurf_dislqg.jpg"
+              },
+              new SpotPhoto
+              {
+                Id = "c",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1611758018/widok_tq74qv.jpg"
+              }
+            }
           },
           new Spot
           {

@@ -1,3 +1,5 @@
+import { IPhoto } from "./profile";
+
 export interface ISpot {
   id: string,
   country: string,
@@ -6,6 +8,7 @@ export interface ISpot {
   name: string,
   imageUrl: string,
   bio: string,
+  photos: IPhoto[],
 }
 
 export interface IWeather {
@@ -15,4 +18,9 @@ export interface IWeather {
   windAngle: string,
   cloudiness: string,
   tideHeight: string,
+}
+
+export interface ISpotPhoto {
+  id: string,
+  url: string
 }

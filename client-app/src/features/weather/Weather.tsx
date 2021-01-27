@@ -8,7 +8,7 @@ import {
   Segment,
   Table,
 } from "semantic-ui-react";
-import { ISpot } from "../../app/models/weather";
+import { ISpot, ISpotPhoto } from "../../app/models/weather";
 import { RootStoreContext } from "../../app/stores/rootStore";
 
 
@@ -116,24 +116,17 @@ const Weather = () => {
             <Grid.Column width={8}>
               <Segment style={descriptionSegmentStyle}>
                 <Header icon="pencil alternate" content={`Opis`} />
-                {/* <span>{currentSpot?.bio}</span> */}
-                <span>
-                  Jedna z najbardziej znanych miejscowości na windsurfingowej i
-                  kitesurfingowej mapie Polski - duże imprezy sportowe,
-                  niepowtarzalny klimat oraz dobre warunki pogodowe w trakcie
-                  lata powodują, że jest to miejsce do którego chętnie kierują
-                  się osoby spragnione adrenaliny i rozrywki.
-                </span>
+                <span>{currentSpot?.bio}</span>
               </Segment>
             </Grid.Column>
           </Grid>
 
           <Segment style={photoSegmentStyle}>
             <Header icon="camera" content={`Zdjęcia`} />
-            <Image.Group >
-              <Image style={imgStyle} src={"/assets/stockJastarnia/noc.jpg"}></Image>
-              <Image style={imgStyle} src={"/assets/stockJastarnia/widok.jpg"}></Image>
-              <Image style={imgStyle} src={"/assets/stockJastarnia/windsurf.jpg"}></Image>
+            <Image.Group>
+              {currentSpot?.photos.map((photo: ISpotPhoto) => (
+                <Image key={photo.id} style={imgStyle} src={photo.url}></Image>
+              ))}
             </Image.Group>
           </Segment>
           <br />
