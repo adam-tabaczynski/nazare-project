@@ -25,8 +25,13 @@ namespace API.Controllers
       });
     }
 
-    [HttpPost]
+    [HttpPut]
     public async Task<ActionResult<Unit>> Edit(Edit.Command command)
+    {
+        return await Mediator.Send(command);
+    }
+    [HttpPut("movie")]
+    public async Task<ActionResult<Unit>> ChangeMovie(ChangeMovie.Command command)
     {
         return await Mediator.Send(command);
     }
