@@ -111,6 +111,7 @@ const Profiles = {
   setMainPhoto: (id: string) => requests.post(`/photos/${id}/setMain`, {}),
   deletePhoto: (id: string) => requests.del(`/photos/${id}`),
   updateProfile: (profile: Partial<IProfile>) => requests.put(`/profiles`, profile),
+  updateMovie: (profile: Partial<IProfile>) => requests.put(`/profiles/movie`, profile),
   follow: (username: string) =>
     requests.post(`/profiles/${username}/follow`, {}),
   unfollow: (username: string) => requests.del(`/profiles/${username}/follow`),

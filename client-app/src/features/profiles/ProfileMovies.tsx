@@ -1,35 +1,50 @@
-import React, { Fragment, useContext } from "react";
-import { Segment } from "semantic-ui-react";
+import React, { Fragment, useContext, useState } from "react";
+import { Button, Grid, Header, Input, Segment, Tab } from "semantic-ui-react";
 import { RootStoreContext } from "../../app/stores/rootStore";
+import ProfileMovieEditForm from "./ProfileMovieEditForm";
 
-const divStyle = {
-  display: "flex",
-  justifyContent: "center",
-};
+
 
 const ProfileMovies = () => {
-
   const rootStore = useContext(RootStoreContext);
-  const {
-    profile
-  } = rootStore.profileStore;
+  const { isCurrentUser, profile, updateMovie } = rootStore.profileStore;
+
+  const [addMovieMode, setAddMovieMode] = useState(false);
 
   return (
-    <Fragment>
-      <Segment>
-        <div style={divStyle}>
-          <iframe
-            title="1"
-            width="480"
-            height="360"
-            src={profile?.movie}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </Segment>
-    </Fragment>
+    <Tab.Pane>
+      <Grid>
+        <Grid.Column width={16} style={{ paddingBottom: 0 }}>
+          <Header floated="left" icon="image" content="Zdjęcia" />
+          {isCurrentUser && (
+            <Button
+              floated="right"
+              basic
+              content={addMovieMode ? "Anuluj" : "Dodaj film"}
+              onClick={() => setAddMovieMode(!addMovieMode)}
+            />
+          )}
+        </Grid.Column>
+        {addMovieMode ? (
+          <Grid.Row centered style={{ marginTop: 40}}>
+            <ProfileMovieEditForm updateMovie={updateMovie} profile={profile!} />
+            {/* <Input style={divStyle} size={"large"} label={"Link"} icon='youtube' placeholder='Tutaj wklej link filmu' /> */}
+          </Grid.Row>
+        ) : (
+          <Grid.Row centered>
+            <iframe
+              title="1"
+              width="480"
+              height="360"
+              src={profile?.movie}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </Grid.Row>
+        )}
+      </Grid>
+    </Tab.Pane>
   );
 };
 

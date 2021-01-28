@@ -102,6 +102,22 @@ export default class ProfileStore {
     }
   };
 
+  @action updateMovie = async (profile: Partial<IProfile>) => {
+    try {
+      await agent.Profiles.updateMovie(profile);
+      runInAction(() => {
+        if (
+          profile.movie !== this.rootStore.userStore.user!.movie
+        ) {
+          this.rootStore.userStore.user!.movie = profile.movie!;
+        }
+        this.profile = { ...this.profile!, ...profile };
+      });
+    } catch (error) {
+      toast.error("Problem updating profile");
+    }
+  };  
+
   @action uploadPhoto = async (file: Blob) => {
     this.uploadingPhoto = true;
     try {

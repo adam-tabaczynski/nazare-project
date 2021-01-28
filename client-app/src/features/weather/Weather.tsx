@@ -1,16 +1,8 @@
 import { observer } from "mobx-react-lite";
 import React, { Fragment, useContext, useEffect } from "react";
-import {
-  Card,
-  Grid,
-  Header,
-  Image,
-  Segment,
-  Table,
-} from "semantic-ui-react";
+import { Card, Grid, Header, Image, Segment, Table } from "semantic-ui-react";
 import { ISpot, ISpotPhoto } from "../../app/models/weather";
 import { RootStoreContext } from "../../app/stores/rootStore";
-
 
 const descriptionSegmentStyle = {
   height: "298px",
