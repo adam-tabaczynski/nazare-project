@@ -28,7 +28,7 @@ namespace Persistence
                     new Photo
                     {
                       Id = "a",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610388689/sogtccaklenjjkkny8rx.jpg",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/kuba_p0qwbi.png",
                       isMain = true
                     }
                   }
@@ -45,7 +45,7 @@ namespace Persistence
                     new Photo
                     {
                       Id = "b",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610388720/sdkp41txqx4wettwtivr.jpg",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/piotrek_zekzrm.png",
                       isMain = true
                     }
                   }
@@ -57,12 +57,13 @@ namespace Persistence
                   UserName = "natalia",
                   Email = "natalia@test.com",
                   Movie = "https://www.youtube.com/embed/spqXq9Z6xio",
+                  Bio = "Cześć wszystkim! Fajnie, że do mnie zaglądasz. Nazywam się Natalia i jestem instruktorką w Chłupach 6 w szkółce Easy Surf. Jeśli chciałbyś/chciałabyś zapisać się do mnie na zajęcią proszę o kontakt na e-maila easy.natalia@gmail.com.  Mam już 6 lat doświadczenia w nauce pływania na kitesurfingu. Posiadam także certyfikat ISO zezwalający na międzynarodowe nauczanie. Istnieje również możliwość prowadzenia zajęć grupowych. Moim atutem jest również biegłe posługiwanie się językiem angielskim :). Jeśli chciałbyś uczestniczyć w jakichś wydarzeniach organizowanych przeze mnie to zapraszam do sekcji wydarzenia. Mam nadzieję, że będziesz się dobrze bawił!! ^^",
                   Photos = new List<Photo>
                   {
                     new Photo
                     {
                       Id = "c",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610389032/zcwnjl1uyhn68lqcutsr.jpg",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/natalia_kedoh5.png",
                       isMain = true
                     }
                   }
@@ -79,7 +80,7 @@ namespace Persistence
                     new Photo
                     {
                       Id = "d",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1610388899/siq5d0lc6h4wxloe39yd.jpg",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/jessica_xirbca.png",
                       isMain = true
                     }
                   }
