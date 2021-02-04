@@ -28,7 +28,7 @@ namespace Persistence
                     new Photo
                     {
                       Id = "a",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/kuba_p0qwbi.png",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612455411/kuba_vjnzkx.png",
                       isMain = true
                     }
                   }
@@ -45,7 +45,7 @@ namespace Persistence
                     new Photo
                     {
                       Id = "b",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/piotrek_zekzrm.png",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612455411/piotrek_wnkajf.png",
                       isMain = true
                     }
                   }
@@ -63,7 +63,7 @@ namespace Persistence
                     new Photo
                     {
                       Id = "c",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/natalia_kedoh5.png",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612455410/natalia_p7ct6t.png",
                       isMain = true
                     }
                   }
@@ -80,7 +80,7 @@ namespace Persistence
                     new Photo
                     {
                       Id = "d",
-                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453286/jessica_xirbca.png",
+                      Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612455411/jessica_hs7ck3.png",
                       isMain = true
                     }
                   }
@@ -305,6 +305,31 @@ namespace Persistence
                     }
                 }
             },
+            new Activity
+            {
+                Title = "Zakończenie sezonu Kitesurfing",
+                Date = new DateTime(2020, 8, 15, 20, 0, 0),
+                Description = "Cześć, zapraszamy wszystkich na imprezę z okazji końca sezonu!",
+                Category = "Impreza",
+                City = "Jastarnia",
+                Venue = "Plaża główna",
+                UserActivities = new List<UserActivity>
+                {
+                    new UserActivity
+                    {
+                        AppUserId = "b",
+                        IsHost = true,
+                        DateJoined = new DateTime(2021, 8, 1, 16, 0, 0),
+                    },
+
+                    new UserActivity
+                    {
+                        AppUserId = "c",
+                        IsHost = false,
+                        DateJoined = new DateTime(2021, 8, 5, 16, 0, 0),
+                    }
+                }
+            },
         };
 
         await context.Activities.AddRangeAsync(activities);
@@ -320,8 +345,27 @@ namespace Persistence
             Longitude = -43.187,
             Name = "Copacabana",
             Country = "Brazylia",
-            Bio = "Some fancy info",
-            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1609760892/Copacabana_emz5bs.jpg"
+            Bio = "Plaża Copacabana zalicza się do najbardziej znanych plaż świata. Znajduje się w Rio de Janeiro w dzielnicy o tej samej nazwie i ma około 4 km długości. Dla mieszkańców Rio, Copacabana nie jest zwykłą plażą. Dla nich to cały styl życia. W weekendy i wakacje plaża jest pełna ludzi.",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1609760892/Copacabana_emz5bs.jpg",
+            Photos = new List<SpotPhoto>
+            {
+              new SpotPhoto
+              {
+                Id = "g",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453724/copacabana_surf_zf0mds.jpg"
+              },
+
+              new SpotPhoto
+              {
+                Id = "h",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453724/copacabana_beach_gpddgv.jpg"
+              },
+              new SpotPhoto
+              {
+                Id = "i",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453724/copacabana_sunset_biluil.jpg"
+              }
+            }
             
           },
           new Spot
@@ -367,8 +411,27 @@ namespace Persistence
             Longitude = 15.583,
             Name = "Kołobrzeg",
             Country = "Polska",
-            Bio = "Some fancy info",
-            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372232/ko%C5%82obrzeg_hclhuy.jpg"
+            Bio = "Kołobrzeg to największe i najznakomitsze uzdrowisko na polskim Wybrzeżu, leżące w województwie zachodniopomorskim, przy ujściu rzeki Parsęty do Bałtyku. Ponadto jest to morski port handlowy, rybacki, pasażerski i wojenny.",
+            ImageUrl="https://res.cloudinary.com/da7q8ywkr/image/upload/v1610372232/ko%C5%82obrzeg_hclhuy.jpg",
+            Photos = new List<SpotPhoto>
+            {
+              new SpotPhoto
+              {
+                Id = "d",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453724/kolobrzeg_kite_tx1b4r.jpg"
+              },
+
+              new SpotPhoto
+              {
+                Id = "e",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453724/kolobrzeg_surf_usobqk.jpg"
+              },
+              new SpotPhoto
+              {
+                Id = "f",
+                Url = "https://res.cloudinary.com/da7q8ywkr/image/upload/v1612453724/kolobrzeg_widok_mly72u.jpg"
+              }
+            }
           },
           new Spot
           {

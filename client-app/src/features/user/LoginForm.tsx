@@ -9,8 +9,8 @@ import { IUserFormValues } from "../../app/models/user";
 import { RootStoreContext } from "../../app/stores/rootStore";
 
 const validate = combineValidators({
-  email: isRequired("email"),
-  password: isRequired("password"),
+  email: isRequired({ message: "Podaj adres e-mail" }),
+  password: isRequired({ message: "Podaj hasło" }),
 });
 
 const LoginForm = () => {

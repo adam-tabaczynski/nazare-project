@@ -20,7 +20,7 @@ const ProfileMovies = () => {
             <Button
               floated="right"
               basic
-              content={addMovieMode ? "Anuluj" : "Dodaj film"}
+              content={addMovieMode ? "Zamknij" : "Dodaj film"}
               onClick={() => setAddMovieMode(!addMovieMode)}
             />
           )}
