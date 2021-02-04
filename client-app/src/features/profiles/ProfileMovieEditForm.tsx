@@ -3,7 +3,7 @@ import { IProfile } from "../../app/models/profile";
 import { Form as FinalForm, Field } from "react-final-form";
 import { observer } from "mobx-react-lite";
 import { combineValidators, isRequired } from "revalidate";
-import { Form, Button, Input, Grid } from "semantic-ui-react";
+import { Form, Button, Grid } from "semantic-ui-react";
 import TextInput from "../../app/common/form/TextInput";
 
 const validate = combineValidators({

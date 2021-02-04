@@ -1,5 +1,5 @@
-import React, { Fragment, useContext, useState } from "react";
-import { Button, Grid, Header, Input, Segment, Tab } from "semantic-ui-react";
+import React, { useContext, useState } from "react";
+import { Button, Grid, Header, Tab } from "semantic-ui-react";
 import { RootStoreContext } from "../../app/stores/rootStore";
 import ProfileMovieEditForm from "./ProfileMovieEditForm";
 
@@ -15,7 +15,7 @@ const ProfileMovies = () => {
     <Tab.Pane>
       <Grid>
         <Grid.Column width={16} style={{ paddingBottom: 0 }}>
-          <Header floated="left" icon="image" content="Zdjęcia" />
+          <Header floated="left" icon="film" content="Film" />
           {isCurrentUser && (
             <Button
               floated="right"

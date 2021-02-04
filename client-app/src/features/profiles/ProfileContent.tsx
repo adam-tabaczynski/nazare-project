@@ -22,7 +22,7 @@ const panes = [
     render: () => <ProfileFollowings />,
   },
   {
-    menuItem: "Filmy",
+    menuItem: "Film",
     render: () => <ProfileMovies />,
   },
 ];
