@@ -25,7 +25,7 @@ export default class UserStore {
       })
       this.rootStore.commonStore.setToken(user.token);
       this.rootStore.modalStore.closeModal();
-      history.push('/activities');
+      history.push('/weather');
     } catch (error) {
       throw error;
     }
@@ -39,7 +39,7 @@ export default class UserStore {
       })
       this.rootStore.commonStore.setToken(user.token);
       this.rootStore.modalStore.closeModal();
-      history.push('/activities');
+      history.push('/weather');
     } catch (error) {
       throw error;
     }

@@ -46,7 +46,7 @@ const ProfileHeader: React.FC<IProps> = ({
         </Grid.Column>
         <Grid.Column width={4}>
           <Statistic.Group widths={2}>
-            <Statistic label={profile.followersCount === 1 ? " Obserwujący" : "Obserwujących"} value={profile.followersCount} />
+            <Statistic label={profile.followersCount === 1 ? " Obserwujący  " : "Obserwujących"} value={profile.followersCount} />
             <Statistic label="Obserwuje" value={profile.followingCount} />
           </Statistic.Group>
           <Divider />

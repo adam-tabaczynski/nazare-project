@@ -44,7 +44,7 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
                   content={activity.title}
                   style={{ color: "white" }}
                 />
-                <p style={{marginTop: 6}}>{format(activity.date, "eeee do MMMM", { locale: pl })}</p>
+                {/* <p style={{marginTop: 6}}>{format(activity.date, "eeee do MMMM", { locale: pl })}</p> */}
                 <p>
                   Organizowane przez{" "}
                   <Link style={{paddingLeft: 2}}to={`/profile/${host.username}`}>

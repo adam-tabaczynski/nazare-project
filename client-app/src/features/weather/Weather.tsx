@@ -5,7 +5,7 @@ import { ISpot, ISpotPhoto } from "../../app/models/weather";
 import { RootStoreContext } from "../../app/stores/rootStore";
 
 const descriptionSegmentStyle = {
-  height: "298px",
+  height: "285px",
   marginBottom: "20px"!,
 };
 const photoSegmentStyle = {

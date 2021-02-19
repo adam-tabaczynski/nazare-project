@@ -29,7 +29,7 @@ const HomePage = () => {
               inverted
               content={`Niech wiatr będzie z Tobą ${user.displayName}!`}
             />          
-            <Button as={Link} to="/activities" size="huge" inverted style={{marginTop: 10}}>
+            <Button as={Link} to="/weather" size="huge" inverted style={{marginTop: 10}}>
               Sprawdź co słychać
             </Button>
           </Fragment>

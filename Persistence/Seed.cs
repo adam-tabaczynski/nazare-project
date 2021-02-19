@@ -71,9 +71,9 @@ namespace Persistence
               new AppUser
               {
                   Id = "d",
-                  DisplayName = "Jessica",
-                  UserName = "jessica",
-                  Email = "jessica@test.com",
+                  DisplayName = "Kasia",
+                  UserName = "kasia",
+                  Email = "kasia@test.com",
                   Movie = " https://www.youtube.com/embed/hg4NEh2gjeQ",                 
                   Photos = new List<Photo>
                   {
@@ -224,7 +224,7 @@ namespace Persistence
             {
                 Title = "Salt Wave Festival 2021",
                 Date = new DateTime(2021, 8, 20, 18, 0, 0),
-                Description = "Zapraszamy wszystkich wielbicieli nadmorskiego klimatu i dobrej muzyki na koncert kończący sezon nad morzem. Zagrają m. in: Pro8l3m, The Cinematic Orchestra, The Dumplings oraz Fisz Emdae Tworzywo.",
+                Description = "Zapraszamy wszystkich wielbicieli nadmorskiego klimatu i dobrej muzyki na koncert kończący sezon nad morzem. Zagrają m. in: Pro8l3m, The Cinematic Orchestra, The Dumplings oraz Fisz Emade Tworzywo.",
                 Category = "Koncert",
                 City = "Jastarnia",
                 Venue = "Lotnisko Jastarnia",

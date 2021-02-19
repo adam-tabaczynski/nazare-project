@@ -7,6 +7,11 @@ interface IProps {
   profile: IProfile;
 }
 
+const divStyle = 
+{
+  display: "inline-block!important"
+}
+
 const ProfileCard: React.FC<IProps> = ({ profile }) => {
   return (
     <Card as={Link} to={`/profile/${profile.username}`}>
@@ -15,10 +20,10 @@ const ProfileCard: React.FC<IProps> = ({ profile }) => {
         <Card.Header>{profile.displayName}</Card.Header>
       </Card.Content>
       <Card.Content extra>
-        <div>
+        <div style={divStyle}>
           <Icon name="user" />
           {profile.followersCount + " "}
-          {profile.followersCount === 1 ? " Obserwujący" : "Obserwujących"}
+          {profile.followersCount === 1 ? "Obserwujący" : "Obserwujących"}
         </div>
       </Card.Content>
     </Card>
