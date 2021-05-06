@@ -36,7 +36,7 @@ namespace Application.Weather
         {
 
           client.BaseAddress = new Uri("http://api.worldweatheronline.com/premium/v1/marine.ashx");
-          var response = await client.GetAsync($"?key=64cd7c6d9ed7405286b71649210603&format=json&q={latitude},{longitude}");
+          var response = await client.GetAsync($"?key=c5379ceb82b5463b849145737210605&format=json&q={latitude},{longitude}");
           response.EnsureSuccessStatusCode();
 
           var stringResult = await response.Content.ReadAsStringAsync();
